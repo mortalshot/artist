@@ -24,12 +24,13 @@ import "../../scss/base/swiper.scss";
 // import 'swiper/css';
 
 // Инициализация слайдеров
-function initSliders() {
+export function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
-	if (document.querySelector('.swiper')) { // Указываем скласс нужного слайдера
+	const collectionSwiper = document.querySelector('.collection__slider');
+	if (collectionSwiper) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
-		new Swiper('.swiper', { // Указываем скласс нужного слайдера
+		const collectionSlider = new Swiper('.collection__slider', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
 			modules: [Navigation],
@@ -37,12 +38,13 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 0,
-			autoHeight: true,
+			autoHeight: false,
 			speed: 800,
+			watchOverflow: true,
 
 			//touchRatio: 0,
 			//simulateTouch: false,
-			//loop: true,
+			// loop: true,
 			//preloadImages: false,
 			//lazy: true,
 
@@ -73,8 +75,8 @@ function initSliders() {
 
 			// Кнопки "влево/вправо"
 			navigation: {
-				prevEl: '.swiper-button-prev',
-				nextEl: '.swiper-button-next',
+				prevEl: '.collection__slider .swiper__arrow_left',
+				nextEl: '.collection__slider .swiper__arrow_right',
 			},
 
 			// Брейкпоинты
@@ -101,9 +103,45 @@ function initSliders() {
 			*/
 			// События
 			on: {
-
 			}
 		});
+
+		const projects = document.querySelectorAll('.collection-item');
+		if (projects.length > 1) {
+			projects.forEach(element => {
+				const back = element.querySelector('.collection-item__back');
+				const link = element.querySelector('.collection-item__link');
+
+				link.addEventListener('click', function () {
+					collectionSlider.disable();
+				})
+				back.addEventListener('click', function () {
+					collectionSlider.enable();
+				})
+				document.addEventListener("keydown", function () {
+					collectionSlider.enable();
+				})
+			});
+		}
+
+		const collectionStep = document.querySelector('.collection__step');
+		if (collectionStep) {
+			collectionSlider.disable();
+			collectionSwiper.classList.add('_disabled');
+
+			const slideActive = collectionSwiper.querySelector('.swiper-slide-active');
+			if (slideActive) {
+				slideActive.querySelector('.collection-item__text').style.opacity = 0;
+			}
+		}
+		collectionSwiper.addEventListener('click', function () {
+			if (collectionSwiper.classList.contains('_disabled')) {
+				setTimeout(() => {
+					collectionSlider.enable();
+					collectionSwiper.classList.remove('_disabled');
+				}, 1000);
+			}
+		})
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)

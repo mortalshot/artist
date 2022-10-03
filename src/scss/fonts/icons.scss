@@ -14,3 +14,16 @@
 		display: block;
 	}
 }
+
+._icon-instagram:before {
+	content: "\e900";
+}
+._icon-slider-left:before {
+	content: "\e901";
+}
+._icon-twitter:before {
+	content: "\e902";
+}
+._icon-facebook:before {
+	content: "\e903";
+}

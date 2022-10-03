@@ -22,16 +22,18 @@ body {
 	min-width: $minWidth + px;
 }
 body {
-	color: $mainColor;
-	line-height: 1;
 	font-family: $fontFamily;
 	font-size: $fontSize;
+	line-height: 1;
+	color: var(--text-color);
+	background-color: var(--bg-color);
 	//text-rendering: optimizeLegibility;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	transition: 0.5s ease background-color, 0.5s color 0s;
 }
 input,
 button,

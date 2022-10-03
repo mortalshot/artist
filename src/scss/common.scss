@@ -1,1 +1,156 @@
-// Заголовки, общие БЄМ блоки и проче...
+h,
+.title-h {
+   &1 {
+      font-weight: 500;
+      font-size: rem(60);
+      line-height: math.div(66, 60);
+   }
+   &2 {
+      font-size: rem(40);
+      line-height: math.div(60, 40);
+   }
+   &3 {
+      font-size: rem(30);
+      line-height: math.div(45, 30);
+   }
+}
+
+img,
+video {
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+section {
+   padding-top: rem(100);
+   padding-bottom: rem(100);
+}
+
+._content {
+   & > * {
+      margin-top: rem(16);
+      margin-bottom: rem(16);
+   }
+
+   a {
+      text-decoration: underline from-font;
+      text-underline-offset: 3px;
+      transition: $transition ease text-decoration 0s;
+
+      @media (any-hover: hover) {
+         &:hover {
+            text-decoration: underline transparent from-font;
+         }
+      }
+   }
+
+   p {
+      margin: rem(16) 0;
+   }
+
+   ol {
+      counter-reset: item;
+
+      li {
+         position: relative;
+         @include adaptiveValue("padding-left", 40, 24);
+         list-style-type: none;
+
+         &::before {
+            content: counter(item) ".";
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+         }
+
+         & > ol {
+            counter-reset: subitem;
+
+            li {
+               &::before {
+                  content: counter(item) "." counters(subitem, ".") " ";
+                  counter-increment: subitem;
+               }
+            }
+         }
+      }
+   }
+
+   ul {
+      padding-left: rem(20);
+      display: grid;
+      align-content: flex-start;
+      row-gap: rem(8);
+      margin: rem(16) 0;
+
+      li {
+         list-style-type: disc;
+      }
+   }
+
+   .table {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: thin;
+
+      table {
+         width: 100%;
+         border-collapse: collapse;
+      }
+   }
+
+   :first-child {
+      margin-top: 0;
+   }
+   :last-child {
+      margin-bottom: 0;
+   }
+}
+
+._hidden {
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 0;
+   height: 0;
+   opacity: 0;
+   visibility: hidden;
+   font-size: 0;
+   line-height: 1;
+}
+
+// Анимации
+
+// swiper
+.swiper {
+   // .swiper__arrows
+   &__arrows {
+   }
+
+   // .swiper__arrow
+   &__arrow {
+      color: var(--text-color);
+      opacity: 0.15;
+
+      &:not(.swiper-button-disabled) {
+         @media (any-hover: hover) {
+            transition: $transition ease opacity 0s;
+
+            &:hover {
+               opacity: 0.6;
+            }
+         }
+      }
+      &.swiper-button-disabled {
+         cursor: default;
+      }
+      // .swiper__arrow_left
+      &_left {
+      }
+
+      // .swiper__arrow_right
+      &_right {
+      }
+   }
+}

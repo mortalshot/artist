@@ -1,4 +1,48 @@
-<header class="header">
+<header class="header" data-lp>
 	<div class="header__container">
+		<div class="header__row">
+			<div class="header__logo logo">
+				<a href="/home.html" class="logo__link">
+					@@include('_logo.htm',{})
+				</a>
+			</div>
+
+			<div class="header__right">
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu">
+						<svg class="burger" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect class="burger__cube burger__cube_first" width="14" height="14" fill-opacity="0.2" />
+							<rect class="burger__cube burger__cube_second" x="28" width="14" height="14" fill-opacity="0.2" />
+							<rect class="burger__cube burger__cube_third" y="28" width="14" height="14" fill-opacity="0.2" />
+							<rect class="burger__cube burger__cube_fourth" x="28" y="28" width="14" height="14" fill-opacity="0.2" />
+						</svg>
+					</button>
+
+					<nav class="menu__body" data-fullscreen>
+						<div class="menu__row">
+							<ul>
+								<li><a href="/home.html">Home</a></li>
+								<li><a href="/rubric-collection.html">Our Friends</a></li>
+								<li><a href="">News</a></li>
+								<li><a href="">Contacts</a></li>
+								<li><a href="">About</a></li>
+							</ul>
+							<ul>
+								<li><a href="">Collection </a></li>
+								<li><a href="">About</a></li>
+							</ul>
+						</div>
+
+						<div class="social">
+							<ul class="social__list">
+								<li class="social__item"><a href="/rubric-collection.html">instagram</a></li>
+								<li class="social__item"><a href="/rubric-collection.html">facebook</a></li>
+								<li class="social__item"><a href="/rubric-collection.html">twitter</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
 	</div>
 </header>

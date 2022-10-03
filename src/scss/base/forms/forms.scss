@@ -1,19 +1,425 @@
 //<FORM>
 // Снипет (HTML):
 .form {
+	// .form__row
 	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: rem(-10);
+		margin-right: rem(-10);
 	}
-	&__column {
+
+	// .form__item
+	&__item {
+		position: relative;
+		width: 100%;
+		margin-bottom: rem(52);
 	}
-	&__line {
+
+	// .form__item-inner
+	&__item-inner {
+		position: relative;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 1px;
+			background-color: $mainColor;
+			position: absolute;
+			bottom: rem(0);
+			left: 0;
+			pointer-events: none;
+			transition: $transition ease width 0s;
+		}
+
+		&._focus {
+			&::after {
+				width: 100%;
+			}
+
+			// .form__label
+			.form__label {
+				font-size: rem(12);
+				opacity: 0.5;
+				top: rem(-4);
+			}
+		}
 	}
+
+	// .form__label
+	&__label {
+		font-size: rem(16);
+		position: absolute;
+		left: rem(0);
+		top: rem(12);
+		pointer-events: none;
+		transition: $transition ease all 0s;
+	}
+	label.form__label {
+		cursor: pointer;
+	}
+
+	// .form__input
 	&__input {
+		/* 		transition: $transition ease border-color 0s;
+
+		&:focus {
+			border-color: $mainColor;
+		} */
 	}
-	&__button {
+
+	// .form__submit
+	&__submit {
+		position: relative;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: rem(2);
+			background-color: $mainColor;
+			position: absolute;
+			bottom: rem(-4);
+			left: 0;
+			pointer-events: none;
+			transition: $transition ease width 0s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::after {
+					width: 100%;
+				}
+
+				i {
+					// animation: sumbit-shake-lr 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+				}
+			}
+		}
+
+		input {
+			width: 100%;
+			font-size: rem(40);
+			line-height: math.div(64, 40);
+			text-align: left;
+			background-color: transparent;
+			cursor: pointer;
+			position: relative;
+			z-index: 1;
+		}
+
+		i {
+			font-size: rem(64);
+			line-height: 1;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%) rotate(180deg);
+		}
+
+		@keyframes sumbit-shake-lr {
+			0%,
+			100% {
+				transform: translateY(-50%) rotate(180deg);
+			}
+			10% {
+				transform: translateY(-50%) rotate(188deg);
+			}
+			20%,
+			40%,
+			60% {
+				transform: translateY(-50%) rotate(170deg);
+			}
+			30%,
+			50%,
+			70% {
+				transform: translateY(-50%) rotate(190deg);
+			}
+			80% {
+				transform: translateY(-50%) rotate(172deg);
+			}
+			90% {
+				transform: translateY(-50%) rotate(188deg);
+			}
+		}
 	}
-	&__error {
+
+	// .form__btn
+	&__btn {
+	}
+
+	// .form__privacy
+	&__privacy {
+		font-size: rem(12);
+		line-height: math.div(18, 12);
+		color: $DGrey;
+		text-align: center;
+
+		&:not(:first-child) {
+			margin-top: rem(60);
+		}
 	}
 }
+
+.col {
+	&-5,
+	&-6,
+	&-7,
+	&-8,
+	&-12,
+	&-sm-3,
+	&-sm-5,
+	&-sm-6,
+	&-sm-7,
+	&-sm-9,
+	&-sm-12,
+	&-md-3,
+	&-md-4,
+	&-md-5,
+	&-md-6,
+	&-md-7,
+	&-md-8,
+	&-md-9,
+	&-md-10,
+	&-md-12,
+	&-lg-3,
+	&-lg-6,
+	&-lg-9,
+	&-lg-12,
+	&-xl-3 {
+		width: 100%;
+		min-height: 1px;
+		padding-left: rem(10);
+		padding-right: rem(10);
+
+		& > [class^="col-"] {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	&-5 {
+		flex: 0 0 41.666%;
+		max-width: 41.666%;
+	}
+
+	&-6 {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	&-7 {
+		flex: 0 0 58.333%;
+		max-width: 58.333%;
+	}
+
+	&-8 {
+		flex: 0 0 66.666%;
+		max-width: 66.666%;
+	}
+
+	&-12 {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	&-sm-3 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-sm-5 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 41.666%;
+			max-width: 41.666%;
+		}
+	}
+
+	&-sm-6 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
+	&-sm-7 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 58.333%;
+			max-width: 58.333%;
+		}
+	}
+
+	&-sm-9 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+
+	&-sm-12 {
+		@media screen and (min-width: 574.98px) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	&-md-3 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-md-4 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 33.333%;
+			max-width: 33.333%;
+		}
+	}
+
+	&-md-5 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 41.666%;
+			max-width: 41.666%;
+		}
+	}
+
+	&-md-6 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
+	&-md-7 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 58.333%;
+			max-width: 58.333%;
+		}
+	}
+
+	&-md-8 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 66.666%;
+			max-width: 66.666%;
+		}
+	}
+
+	&-md-9 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+
+	&-md-10 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 83.333%;
+			max-width: 83.333%;
+		}
+	}
+
+	&-md-12 {
+		@media screen and (min-width: $mobile) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	&-lg-3 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-lg-4 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 33.333%;
+			max-width: 33.333%;
+		}
+	}
+
+	&-lg-6 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+
+	&-lg-8 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 66.666%;
+			max-width: 66.666%;
+		}
+	}
+
+	&-lg-9 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+
+	&-lg-12 {
+		@media screen and (min-width: $tablet) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+
+	&-xl-3 {
+		@media screen and (min-width: 1199.98px) {
+			flex: 0 0 25%;
+			max-width: 25%;
+		}
+	}
+
+	&-xl-9 {
+		@media screen and (min-width: 1199.98px) {
+			flex: 0 0 75%;
+			max-width: 75%;
+		}
+	}
+}
+
+// contact-form7
+.wpcf7-spinner {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: rem(30);
+	background-color: initial;
+	pointer-events: none;
+
+	&::before {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: rem(32);
+		height: rem(32);
+		background-color: var(--text-color);
+	}
+}
+
+.wpcf7-form-control-wrap {
+	position: initial;
+}
+.wpcf7-response-output {
+	display: none !important;
+}
+
 //</FORM>
 
 // <BUTTONS>
@@ -22,7 +428,7 @@
 
 // <INPUTS>
 // Снипет (HTML): inp
-// @import "input";
+@import "input";
 
 // <CHECK>
 // Снипет (HTML): chk
