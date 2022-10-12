@@ -119,6 +119,9 @@ section {
    font-size: 0;
    line-height: 1;
 }
+._disabled {
+   pointer-events: none;
+}
 
 // Анимации
 

@@ -28,6 +28,7 @@ export function initSliders() {
 	// Перечень слайдеров
 	// Проверяем, есть ли слайдер на стронице
 	const collectionSwiper = document.querySelector('.collection__slider');
+	const collectionImage = document.querySelector('.collection-item__image');
 	if (collectionSwiper) { // Указываем скласс нужного слайдера
 		// Создаем слайдер
 		const collectionSlider = new Swiper('.collection__slider', { // Указываем скласс нужного слайдера
@@ -134,7 +135,7 @@ export function initSliders() {
 				slideActive.querySelector('.collection-item__text').style.opacity = 0;
 			}
 		}
-		collectionSwiper.addEventListener('click', function () {
+		collectionImage.addEventListener('click', function () {
 			if (collectionSwiper.classList.contains('_disabled')) {
 				setTimeout(() => {
 					collectionSlider.enable();

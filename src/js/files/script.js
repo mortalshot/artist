@@ -3,6 +3,7 @@ import { isMobile, menuClose, bodyLock, bodyUnlock, fullVHfix } from "./function
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 import { initSliders } from "./sliders.js";
+import { initGalleries } from "./gallery.js";
 
 import { gsap } from 'gsap';
 
@@ -126,29 +127,73 @@ if (input.length > 0) {
    });
 }
 
-const collectionSwiper = document.querySelector('.collection__slider');
-const collectionStep = document.querySelector('.collection__step');
-const collectionYear = document.querySelector('.collection__year');
-const collectionItemText = document.querySelector('.collection-item__text');
+// Переходим к слайдеру в рубрике коллекции
+function collectionSwiperClick() {
+   const collectionSwiper = document.querySelector('.collection__slider');
+   const collectionImage = document.querySelector('.collection-item__image');
+   const collectionStep = document.querySelector('.collection__step');
+   const collectionYear = document.querySelector('.collection__year');
+   const collectionItemText = document.querySelector('.collection-item__text');
+   console.log(collectionSwiper);
 
-if (collectionSwiper) {
-   collectionSwiper.addEventListener('click', function () {
-      let collectionSwiperTL = gsap.timeline()
+   if (collectionSwiper) {
+      collectionImage.addEventListener('click', function () {
+         let collectionSwiperTL = gsap.timeline()
 
-      document.body.style.cssText = `--bg-color: #fff; --text-color: #000`;
+         document.body.style.cssText = `--bg-color: #fff; --text-color: #000`;
 
-      collectionSwiperTL.to(collectionSwiper, { translateX: "-100%", duration: 1 });
-      if (collectionStep) {
-         collectionSwiperTL.to(collectionStep, { opacity: 0, pointerEvents: 'false' }, "-=1");
-      }
-      if (collectionYear) {
-         collectionSwiperTL.to(collectionYear, { opacity: 0, pointerEvents: 'false' }, "-=1");
-      }
-      if (collectionSwiper.classList.contains('_disabled') && collectionItemText) {
-         collectionSwiperTL.to(collectionItemText, { opacity: 1 }, "-=1");
-      }
-   })
+         collectionSwiperTL.to(collectionSwiper, { xPercent: -100, duration: 1 });
+         if (collectionStep) {
+            collectionSwiperTL.to(collectionStep, { opacity: 0, pointerEvents: 'false' }, "-=1");
+         }
+         if (collectionYear) {
+            collectionSwiperTL.to(collectionYear, { opacity: 0, pointerEvents: 'false' }, "-=1");
+         }
+         if (collectionSwiper.classList.contains('_disabled') && collectionItemText) {
+            collectionSwiperTL.to(collectionItemText, { opacity: 1 }, "-=1");
+         }
+      })
+   }
 }
+collectionSwiperClick();
+
+// Изменяем вид коллекции
+function collectionViewChange() {
+   const collectionWrapper = document.querySelector('.collections__wrapper');
+   const collectionControls = document.querySelectorAll('.collections__controll');
+   const collectionItems = document.querySelector('.collections__items');
+
+   if (collectionControls.length > 0) {
+      collectionControls.forEach(element => {
+         element.addEventListener('click', function () {
+            collectionWrapper.classList.add('_loading');
+
+            setTimeout(() => {
+               collectionWrapper.classList.remove('_loading');
+
+               collectionControls.forEach(element => {
+                  element.classList.remove('_active');
+               });
+
+               element.classList.add('_active');
+
+               if (element.classList.contains('collections__controll_rows')) {
+                  collectionItems.classList.remove('collections__items_column');
+                  collectionItems.classList.add('collections__items_row');
+               } else {
+                  collectionItems.classList.remove('collections__items_row');
+                  collectionItems.classList.add('collections__items_column');
+               }
+            }, 500);
+
+
+            // ScrollTrigger.update();
+            // ScrollTrigger.refresh();
+         })
+      });
+   }
+}
+collectionViewChange();
 
 // swup
 import "../libs/swup.min.js";
@@ -185,4 +230,10 @@ swup.on('contentReplaced', function () {
    changeColor();
    // обработка клика по проектам в рубрике
    projectsListener();
+   // инициализируем галерею
+   initGalleries();
+   // Переходим к слайдеру в рубрике коллекции
+   collectionSwiperClick();
+   // Изменяем вид коллекции
+   collectionViewChange();
 });
