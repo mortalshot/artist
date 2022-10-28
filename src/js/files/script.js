@@ -15,6 +15,7 @@ window.addEventListener('load', firstscreenResize)
 window.addEventListener('resize', firstscreenResize);
 header.classList.add('header_white');
 
+// Подстраиваем контент под фиксированный хедер
 function firstscreenResize() {
    const header = document.querySelector('header.header');
    let headerOffsetHeight = header.offsetHeight;
@@ -29,10 +30,11 @@ function firstscreenResize() {
    }
 }
 
-// collection-item
+// Работа с рубриками
 export function projectsListener() {
    const projects = document.querySelectorAll('.collection-item');
    if (projects.length > 0) {
+
       projects.forEach(element => {
          const back = element.querySelector('.collection-item__back');
          const link = element.querySelector('.collection-item__link');
@@ -41,34 +43,49 @@ export function projectsListener() {
          const text = element.querySelector('.collection-item__text');
          const request = element.querySelector('.collection-item__request');
 
+         const collectionControlls = document.querySelector('.collection-controlls');
+
          let elementTL = gsap.timeline()
 
-         link.addEventListener('click', function () {
-            if (!element.classList.contains('_active')) {
-               element.classList.add('_active');
+         if (link) {
+            link.addEventListener('click', function (e) {
+               if (element.closest('.collection__slider').classList.contains('collection__slider_row')) {
+                  e.preventDefault();
+               }
 
-               const bgColor = element.querySelector('.bg-color');
-               const textColor = element.querySelector('.text-color');
-               document.body.style.cssText = `--bg-color: ${bgColor.innerHTML}; --text-color: ${textColor.innerHTML}`;
+               if (!element.classList.contains('_active')) {
+                  element.classList.add('_active');
 
-               elementTL.to(image, { scale: 1.2 });
-               if (text) {
-                  elementTL.to(text, { opacity: 0 }, "-=0.5");
+                  const bgColor = element.querySelector('.bg-color');
+                  const textColor = element.querySelector('.text-color');
+                  changeColor(bgColor.innerHTML, textColor.innerHTML);
+
+
+                  if (window.innerWidth > 767.98) {
+                     elementTL.to(image, { scale: 1.2 });
+                  } else {
+                     elementTL.to(image, { scale: 1.2, yPercent: -25 });
+                  }
+                  if (text) {
+                     elementTL.to(text, { opacity: 0 }, "-=0.5");
+                  }
+                  if (body) {
+                     elementTL.to(body, { translateY: 0 }, "-=0.5");
+                  }
+                  elementTL.to(back, { opacity: 0.2, pointerEvents: "all" }, "-=0.5");
+                  if (request) {
+                     elementTL.to(request, { opacity: 1, pointerEvents: "all" }, "-=0.5");
+                  }
+
+                  elementTL.to(collectionControlls, { opacity: 0, display: 'none' }, "-=0.5");
                }
-               if (body) {
-                  elementTL.to(body, { translateY: 0 }, "-=0.5");
-               }
-               elementTL.to(back, { opacity: 0.2, pointerEvents: "all" }, "-=0.5");
-               if (request) {
-                  elementTL.to(request, { opacity: 1, pointerEvents: "all" }, "-=0.5");
-               }
-            }
-         })
+            })
+         }
 
          function removeAnimation() {
             element.classList.remove('_active');
 
-            elementTL.to(image, { scale: 1 });
+            elementTL.to(image, { scale: 1, yPercent: 0 });
             if (body) {
                elementTL.to(body, { translateY: "100%" }, "-=0.5");
             }
@@ -79,8 +96,9 @@ export function projectsListener() {
             if (request) {
                elementTL.to(request, { opacity: 0, pointerEvents: "none" }, "-=0.8");
             }
+            elementTL.to(collectionControlls, { opacity: 1, display: 'flex' }, "-=0.5");
 
-            changeColor();
+            changeColor('#fff', '#000');
          }
 
          // Закрываем меню мне клике на Escape
@@ -94,11 +112,12 @@ export function projectsListener() {
 projectsListener();
 
 // Меняем базовые цвета
-function changeColor() {
-   const bgColor = document.getElementById('bg-color');
-   const textColor = document.getElementById('text-color');
+export function changeColor(bgColor, textColor) {
+   bgColor ? bgColor : bgColor = document.getElementById('bg-color').innerHTML;
+   textColor ? textColor : textColor = document.getElementById('text-color').innerHTML;
+
    if (bgColor && textColor) {
-      document.body.style.cssText = `--bg-color: ${bgColor.innerHTML}; --text-color: ${textColor.innerHTML}`;
+      document.body.style.cssText = `--bg-color: ${bgColor}; --text-color: ${textColor}`;
    }
 }
 changeColor();
@@ -134,66 +153,72 @@ function collectionSwiperClick() {
    const collectionStep = document.querySelector('.collection__step');
    const collectionYear = document.querySelector('.collection__year');
    const collectionItemText = document.querySelector('.collection-item__text');
-   console.log(collectionSwiper);
+   const collectionControlls = document.querySelector('.collection-controlls');
 
    if (collectionSwiper) {
       collectionImage.addEventListener('click', function () {
-         let collectionSwiperTL = gsap.timeline()
+         if (collectionSwiper.classList.contains('_disabled')) {
+            let collectionSwiperTL = gsap.timeline();
+            changeColor('#fff', '#000');
 
-         document.body.style.cssText = `--bg-color: #fff; --text-color: #000`;
+            if (window.innerWidth > 767.98) {
+               collectionSwiperTL.fromTo(collectionSwiper, { xPercent: -50 }, { xPercent: -100, duration: 1 });
+            } else {
+               collectionSwiperTL.to(collectionSwiper, { xPercent: 0, duration: 1 });
+               collectionSwiperTL.to(collectionStep, { height: 0 }, '-=1');
+            }
+            if (collectionStep) {
+               collectionSwiperTL.to(collectionStep, { opacity: 0, pointerEvents: 'false' }, "-=1");
+            }
+            if (collectionYear) {
+               collectionSwiperTL.to(collectionYear, { opacity: 0, pointerEvents: 'false' }, "-=1");
+            }
+            if (collectionItemText) {
+               collectionSwiperTL.to(collectionItemText, { opacity: 1 }, "-=1");
+            }
 
-         collectionSwiperTL.to(collectionSwiper, { xPercent: -100, duration: 1 });
-         if (collectionStep) {
-            collectionSwiperTL.to(collectionStep, { opacity: 0, pointerEvents: 'false' }, "-=1");
-         }
-         if (collectionYear) {
-            collectionSwiperTL.to(collectionYear, { opacity: 0, pointerEvents: 'false' }, "-=1");
-         }
-         if (collectionSwiper.classList.contains('_disabled') && collectionItemText) {
-            collectionSwiperTL.to(collectionItemText, { opacity: 1 }, "-=1");
+            collectionSwiperTL.to(collectionControlls, { opacity: 1, display: 'flex' }, "-=0.5");
          }
       })
    }
 }
 collectionSwiperClick();
 
-// Изменяем вид коллекции
-function collectionViewChange() {
-   const collectionWrapper = document.querySelector('.collections__wrapper');
-   const collectionControls = document.querySelectorAll('.collections__controll');
-   const collectionItems = document.querySelector('.collections__items');
-
-   if (collectionControls.length > 0) {
-      collectionControls.forEach(element => {
-         element.addEventListener('click', function () {
-            collectionWrapper.classList.add('_loading');
-
-            setTimeout(() => {
-               collectionWrapper.classList.remove('_loading');
-
-               collectionControls.forEach(element => {
-                  element.classList.remove('_active');
-               });
-
-               element.classList.add('_active');
-
-               if (element.classList.contains('collections__controll_rows')) {
-                  collectionItems.classList.remove('collections__items_column');
-                  collectionItems.classList.add('collections__items_row');
-               } else {
-                  collectionItems.classList.remove('collections__items_row');
-                  collectionItems.classList.add('collections__items_column');
-               }
-            }, 500);
-
-
-            // ScrollTrigger.update();
-            // ScrollTrigger.refresh();
-         })
-      });
+// Проверяем на safari
+var userAgent = navigator.userAgent.toLowerCase();
+if (userAgent.indexOf('safari') != -1) {
+   if (userAgent.indexOf('chrome') > -1) {
+      //browser is chrome
+   } else if ((userAgent.indexOf('opera') > -1) || (userAgent.indexOf('opr') > -1)) {
+      //browser is opera 
+   } else {
+      document.body.classList.add('safari');
    }
 }
-collectionViewChange();
+
+// Работа с кнопкой "scroll-top"
+function moveUpListener() {
+   const moveUp = document.querySelector('.scroll-top__button');
+   if (moveUp) {
+      document.addEventListener("scroll", function (e) {
+         const scrollTop = window.scrollY;
+
+         if (scrollTop >= 600) {
+            moveUp.classList.add('_active');
+         } else {
+            moveUp.classList.remove('_active');
+         }
+      })
+
+      moveUp.addEventListener('click', function () {
+         window.scrollTo({
+            top: "#swup",
+            behavior: "smooth"
+         });
+      })
+   }
+}
+moveUpListener();
 
 // swup
 import "../libs/swup.min.js";
@@ -236,4 +261,6 @@ swup.on('contentReplaced', function () {
    collectionSwiperClick();
    // Изменяем вид коллекции
    collectionViewChange();
+   // Работа с кнопкой "scroll-top"
+   moveUpListener();
 });

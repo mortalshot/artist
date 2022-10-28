@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Страница новости"
+})
+
+<body>
+   <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main id="swup" class="page transition-fade">
+         <section class="single-news">
+            <div class="single-news__container">
+               <div class="single-news__top">
+                  <div class="single-news__meta">
+                     <a href="" class="single-news__back _icon-slider-left">
+                        <span>Back</span>
+                     </a>
+                     <div class="single-news__date">20 december 2021</div>
+                  </div>
+
+                  <h1 class="single-news__title title-h2">Some part of the text that you can read in this area. And after that you can scrool down and watch my works</h1>
+                  <div class="single-news__preview"><img src="@img/projects/project1-1.jpg" alt="" loading="lazy"></div>
+               </div>
+
+               <div class="single-news__text _content">
+                  <p>Some part of text what you can read in this area. And after that you can scrool down and watch my works. Some part of text what you can read in this area. And after that you can scrool down and watch my works</p>
+
+                  <blockquote class="wp-block-quote">
+                     <p>Some part of text what you can read in this area. And after that you can scrool down and watch my works</p>
+                     <cite>Author</cite>
+                  </blockquote>
+
+                  <p>Some part of text what you can read in this area. And after that you can scrool down and watch my works. Some part of text what you can read in this area. And after that you can scrool down and watch my works. Some part of text what you can read in this area. And after that you can scrool down and watch my works. Some part of text what you can read in this area. And after that you can scrool down and watch my works.</p>
+
+                  <figure>
+                     <img src="@img/projects/project2-1.jpg" alt="">
+                     <figcaption>Some part of text what you can read in this area</figcaption>
+                  </figure>
+
+                  <p>Some part of text what you can read in this area. And after that you can scrool down and watch my works. Some part of text what you can read in this area. And after that you can scrool down and watch my works. Some part of text what you can read in this area. And after that you can scrool down and watch my works. Some part of text what you can read in this area. And after that you can scrool down and watch my works.</p>
+
+                  <figure class="wp-block-gallery columns-4" data-gallery>
+                     <figure href="@img/projects/project3-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project3-1.jpg" alt="">
+                        <figcaption>picture caption</figcaption>
+                     </figure>
+                     <figure href="@img/projects/project5-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project5-1.jpg" alt="">
+                     </figure>
+                     <figure href="@img/projects/project2-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project2-1.jpg" alt="">
+                     </figure>
+                     <figure href="@img/projects/project1-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project1-1.jpg" alt="">
+                     </figure>
+                  </figure>
+
+                  <figure class="wp-block-gallery columns-3" data-gallery>
+                     <figure href="@img/projects/project3-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project3-1.jpg" alt="">
+                        <figcaption>picture caption</figcaption>
+                     </figure>
+                     <figure href="@img/projects/project5-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project5-1.jpg" alt="">
+                     </figure>
+                     <figure href="@img/projects/project2-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project2-1.jpg" alt="">
+                     </figure>
+                     <figure href="@img/projects/project1-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project1-1.jpg" alt="">
+                     </figure>
+                  </figure>
+
+                  <figure class="wp-block-gallery columns-2" data-gallery>
+                     <figure href="@img/projects/project3-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project3-1.jpg" alt="">
+                        <figcaption>picture caption</figcaption>
+                     </figure>
+                     <figure href="@img/projects/project5-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project5-1.jpg" alt="">
+                     </figure>
+                     <figure href="@img/projects/project2-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project2-1.jpg" alt="">
+                     </figure>
+                     <figure href="@img/projects/project1-1.jpg" class="wp-block-image size-large">
+                        <img src="@img/projects/project1-1.jpg" alt="">
+                     </figure>
+                  </figure>
+               </div>
+            </div>
+         </section>
+
+         <div id="bg-color" class="_hidden">#fff</div>
+         <div id="text-color" class="_hidden">#000</div>
+
+         <div class="scroll-top" data-lp>
+            <div class="scroll-top__container">
+               <button type="button" class="scroll-top__button _icon-up"></button>
+            </div>
+         </div>
+      </main>
+      @@include('html/_footer.htm',{})
+   </div>
+   @@include('html/_popup.htm',{})
+   @@include('html/_js.htm',{})
+</body>
+
+</html>

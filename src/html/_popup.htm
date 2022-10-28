@@ -1,56 +1,72 @@
-<div id="project-request" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<div class="popup__close-wrapper">
-				<button data-close type="button" class="popup__close _icon-slider-left">Back</button>
-			</div>
-			<div class="popup__body">
-				<form action="" class="project-request__form form">
-					<div class="popup__title">If you want ask about buying this artwork send a request</div>
+<div class="modals">
+	<div id="project-request" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__close-wrapper">
+					<button data-close type="button" class="popup__close _icon-slider-left">Back</button>
+				</div>
+				<div class="popup__body">
+					<form action="" class="project-request__form form">
+						<div class="popup__title">If you want ask about buying this artwork send a request</div>
 
-					<div class="form__row">
-						<div class="form__item col-12">
-							<div class="form__item-inner">
-								<label for="request-name" class="form__label">Name</label>
-								<span>
-									<input type="text" name="your-name" class="form__input" id="request-name">
-								</span>
+						<div class="form__row">
+							<div class="form__item col-12">
+								<div class="form__item-inner">
+									<label for="request-name" class="form__label">Name</label>
+									<span>
+										<input type="text" name="your-name" class="form__input" id="request-name">
+									</span>
+								</div>
+							</div>
+							<div class="form__item col-12">
+								<div class="form__item-inner">
+									<label for="request-phone" class="form__label">Phone</label>
+									<span>
+										<input type="text" name="your-phone" class="form__input" id="request-phone">
+									</span>
+								</div>
+							</div>
+							<div class="form__item col-12">
+								<div class="form__item-inner">
+									<label for="request-email" class="form__label">Email</label>
+									<span>
+										<input type="email" name="your-email" class="form__input" id="request-email">
+									</span>
+								</div>
+							</div>
+							<div class="form__item col-12">
+								<div class="form__item-inner">
+									<label for="request-comments" class="form__label">Comments</label>
+									<span>
+										<textarea id="request-comments" name="request-comment" class="form__input"></textarea>
+									</span>
+								</div>
 							</div>
 						</div>
-						<div class="form__item col-12">
-							<div class="form__item-inner">
-								<label for="request-phone" class="form__label">Phone</label>
-								<span>
-									<input type="text" name="your-phone" class="form__input" id="request-phone">
-								</span>
-							</div>
+						<div class="form__submit">
+							<input type="submit" value="Send message">
+							<span class="wpcf7-spinner"></span>
+							<i class="_icon-slider-left"></i>
 						</div>
-						<div class="form__item col-12">
-							<div class="form__item-inner">
-								<label for="request-email" class="form__label">Email</label>
-								<span>
-									<input type="email" name="your-email" class="form__input" id="request-email">
-								</span>
-							</div>
+						<div class="form__privacy _content">
+							<p>Fill this for you agree with <a href="">therms and conditions</a></p>
 						</div>
-						<div class="form__item col-12">
-							<div class="form__item-inner">
-								<label for="request-comments" class="form__label">Comments</label>
-								<span>
-									<textarea id="request-comments" name="request-comment" class="form__input"></textarea>
-								</span>
-							</div>
-						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<button type="button" class="_hidden" data-popup="#thanks"> </button>
+	<div id="thanks" aria-hidden="true" class="thanks popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="thanks__title title-h1">Thank you! Message have been sent</div>
+					<div class="thanks__text _content">
+						<p>We will contact you shortly</p>
 					</div>
-					<div class="form__submit">
-						<input type="submit" value="Send message">
-						<span class="wpcf7-spinner"></span>
-						<i class="_icon-slider-left"></i>
-					</div>
-					<div class="form__privacy _content">
-						<p>Fill this for you agree with <a href="">therms and conditions</a></p>
-					</div>
-				</form>
+					<button type="button" data-close class="thanks__close">To main</button>
+				</div>
 			</div>
 		</div>
 	</div>

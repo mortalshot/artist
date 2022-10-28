@@ -23,8 +23,8 @@ body {
 }
 body {
 	font-family: $fontFamily;
-	font-size: $fontSize;
-	line-height: 1;
+	@include adaptiveValue("font-size", 20, 14);
+	line-height: math.div(24, 16);
 	color: var(--text-color);
 	background-color: var(--bg-color);
 	//text-rendering: optimizeLegibility;

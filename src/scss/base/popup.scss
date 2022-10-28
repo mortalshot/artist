@@ -61,8 +61,8 @@ body::after {
 		position: relative;
 		display: grid;
 		align-content: center;
-		padding-top: rem(40);
-		padding-bottom: rem(40);
+		@include adaptiveValue("padding-top", 40, 16);
+		@include adaptiveValue("padding-bottom", 40, 16);
 
 		.lock & {
 			visibility: visible;
@@ -71,11 +71,11 @@ body::after {
 
 	// .popup__title
 	&__title {
-		font-size: rem(28);
+		@include adaptiveValue("font-size", 28, 18);
 		line-height: math.div(42, 28);
 
 		&:not(:last-child) {
-			margin-bottom: rem(56);
+			@include adaptiveValue("margin-bottom", 56, 20);
 		}
 	}
 
@@ -85,8 +85,14 @@ body::after {
 		max-width: rem($maxWidthContainer);
 		margin: 0 auto;
 		display: flex;
-		justify-content: flex-end;
 		padding: 0 rem(math.div($containerPadding, 2));
+
+		@media (min-width: $mobile) {
+			justify-content: flex-end;
+		}
+		@media (max-width: $mobile) {
+			margin-bottom: rem(32);
+		}
 	}
 
 	// .popup__close
@@ -95,18 +101,21 @@ body::after {
 		display: flex;
 		align-items: center;
 		outline: 0 !important;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		font-size: rem(40);
+		@include adaptiveValue("font-size", 40, 24);
 		line-height: math.div(60, 40);
 		// color: var(--textColor);
 		color: $mainColor;
 		opacity: 0.2;
 
+		@media (min-width: $mobile) {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
 		&::before {
-			font-size: rem(64);
-			margin-right: rem(38);
+			@include adaptiveValue("font-size", 64, 40);
+			@include adaptiveValue("margin-right", 40, 16);
 		}
 
 		@media (any-hover: hover) {
@@ -124,8 +133,51 @@ body::after {
 
 	// .popup__body
 	&__body {
-		max-width: rem(426);
+		max-width: rem(466);
 		margin-left: auto;
 		margin-right: auto;
+		padding: 0 rem(math.div($containerPadding, 2));
+	}
+}
+
+.thanks {
+	// .thanks__title
+	&__title {
+	}
+
+	// .thanks__text
+	&__text {
+	}
+
+	// .thanks__close
+	&__close {
+		text-decoration: underline var(--text-color) from-font;
+		text-underline-offset: 3px;
+		transition: $transition ease text-decoration 0s;
+		outline: 0;
+		
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline transparent from-font;
+			}
+		}
+	}
+
+	.popup {
+		// .popup__wrapper
+		&__wrapper {
+		}
+
+		// .popup__content
+		&__content {
+		}
+
+		// .popup__body
+		&__body {
+			max-width: rem(663);
+			display: grid;
+			justify-items: flex-start;
+			@include adaptiveValue("row-gap", 32, 24);
+		}
 	}
 }

@@ -2,15 +2,15 @@ h,
 .title-h {
    &1 {
       font-weight: 500;
-      font-size: rem(60);
+      @include adaptiveValue("font-size", 54, 30, 992, 320, 1);
       line-height: math.div(66, 60);
    }
    &2 {
-      font-size: rem(40);
+      @include adaptiveValue("font-size", 36, 20);
       line-height: math.div(60, 40);
    }
    &3 {
-      font-size: rem(30);
+      @include adaptiveValue("font-size", 27, 18);
       line-height: math.div(45, 30);
    }
 }
@@ -23,8 +23,12 @@ video {
 }
 
 section {
-   padding-top: rem(100);
-   padding-bottom: rem(100);
+   @include adaptiveValue("padding-top", 100, 40);
+   @include adaptiveValue("padding-bottom", 100, 40);
+
+   &:first-child {
+      @include adaptiveValue("padding-top", 50, 16);
+   }
 }
 
 ._content {
@@ -100,6 +104,77 @@ section {
       }
    }
 
+   .wp-block-quote {
+      @include adaptiveValue("font-size", 27, 18);
+      line-height: math.div(45, 30);
+      @include adaptiveValue("margin-top", 48, 20);
+      @include adaptiveValue("margin-bottom", 48, 20);
+
+      cite {
+         @include adaptiveValue("font-size", 20, 14);
+         opacity: 0.6;
+      }
+   }
+
+   figure {
+      @include adaptiveValue("margin-top", 48, 20);
+      @include adaptiveValue("margin-bottom", 48, 20);
+
+      img {
+      }
+
+      figcaption {
+         @include adaptiveValue("font-size", 16, 12);
+         line-height: math.div(24, 16);
+         @include adaptiveValue("margin-top", 20, 12);
+      }
+   }
+
+   @for $i from 1 through 4 {
+      .columns-#{$i} {
+         display: grid;
+         @include adaptiveValue("gap", 35, 10);
+      }
+   }
+   .columns-4 {
+      @media (min-width: $mobileSmall) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+      @media (min-width: $mobile) {
+         grid-template-columns: repeat(4, 1fr);
+      }
+   }
+   .columns-3 {
+      @media (min-width: $mobileSmall) {
+         grid-template-columns: repeat(3, 1fr);
+      }
+   }
+   .columns-2 {
+      @media (min-width: $mobileSmall) {
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
+
+   .wp-block-gallery {
+      figure {
+         margin: 0;
+
+         @media (min-width: $mobileSmall) {
+            position: relative;
+            padding-bottom: 100%;
+
+            img {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+      }
+   }
+
    :first-child {
       margin-top: 0;
    }
@@ -121,6 +196,60 @@ section {
 }
 ._disabled {
    pointer-events: none;
+}
+._md3-hide {
+   @media (max-width: $mobile) {
+      display: none !important;
+   }
+}
+
+.scroll-top {
+   position: fixed;
+   @include adaptiveValue("bottom", 20, 0, 1440, 992, 1);
+   left: 0;
+   z-index: 1;
+
+   @media (min-width: $mobile) {
+      width: 100%;
+   }
+
+   // .scroll-top__container
+   &__container {
+      position: relative;
+
+      @media (max-width: $mobile) {
+         padding: 0;
+      }
+   }
+
+   // .scroll-top__button
+   &__button {
+      @include adaptiveValue("padding", 20, 10);
+      @include adaptiveValue("font-size", 36, 24);
+      background-color: $White;
+      position: relative;
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+      transition: $transition ease all 0s;
+
+      &._active {
+         opacity: 1;
+         pointer-events: all;
+      }
+
+      @media (any-hover: hover) {
+         &:hover {
+            background-color: rgba($color: $Grey, $alpha: 0.3);
+         }
+      }
+
+      &._icon-slider-left {
+         &::before {
+            transform: rotate(90deg);
+         }
+      }
+   }
 }
 
 // Анимации

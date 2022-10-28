@@ -23,6 +23,22 @@
   display: block;
 }
 
+._icon-slider-control:before {
+  content: "\e904";
+}
+
+._icon-up:before {
+  content: "\e905";
+}
+
+._icon-search:before {
+  content: "\e906";
+}
+
+._icon-columns-control:before {
+  content: "\e907";
+}
+
 ._icon-instagram:before {
   content: "\e900";
 }
@@ -60,8 +76,16 @@ body {
 
 body {
   font-family: "Poppins";
-  font-size: 1.25rem;
-  line-height: 1;
+  font-size: clamp( 0.875rem , 0.796875rem  +  0.390625vw , 1.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 96);
+  	} */
+  line-height: 1.5;
   color: var(--text-color);
   background-color: var(--bg-color);
   -ms-text-size-adjust: 100%;
@@ -160,7 +184,7 @@ h6 {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   margin: 0 auto;
-  padding: 0 0.9375rem;
+  padding: 0 1.25rem;
 }
 
 .form__row {
@@ -176,7 +200,15 @@ h6 {
 .form__item {
   position: relative;
   width: 100%;
-  margin-bottom: 3.25rem;
+  margin-bottom: clamp( 1.25rem , 0.8333333333rem  +  2.0833333333vw , 3.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-bottom: $propertyValue) {
+  		margin-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-bottom: $propertyValue) {
+  		margin-bottom: calc(1.25rem + 2 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .form__item-inner {
@@ -209,7 +241,15 @@ h6 {
 }
 
 .form__label {
-  font-size: 1rem;
+  font-size: clamp( 0.875rem , 0.8489583333rem  +  0.1302083333vw , 1rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 96);
+  	} */
   position: absolute;
   left: 0rem;
   top: 0.75rem;
@@ -221,14 +261,6 @@ h6 {
 
 .form label.form__label {
   cursor: pointer;
-}
-
-.form__input {
-  /* 		transition: $transition ease border-color 0s;
-
-  &:focus {
-  	border-color: $mainColor;
-  } */
 }
 
 .form__submit {
@@ -252,7 +284,15 @@ h6 {
 
 .form__submit input {
   width: 100%;
-  font-size: 2.5rem;
+  font-size: clamp( 1.5rem , 1.2916666667rem  +  1.0416666667vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.5rem + 1 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1.6;
   text-align: left;
   background-color: transparent;
@@ -262,7 +302,15 @@ h6 {
 }
 
 .form__submit i {
-  font-size: 4rem;
+  font-size: clamp( 2.5rem , 2.1875rem  +  1.5625vw , 4rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(2.5rem + 1.5 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1;
   position: absolute;
   right: 0;
@@ -344,7 +392,15 @@ h6 {
 }
 
 .form__privacy:not(:first-child) {
-  margin-top: 3.75rem;
+  margin-top: clamp( 2rem , 1.6354166667rem  +  1.8229166667vw , 3.75rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(2rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .col-5,
@@ -641,8 +697,24 @@ body::after {
   display: grid;
   -ms-flex-line-pack: center;
       align-content: center;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  padding-top: clamp( 1rem , 0.6875rem  +  1.5625vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-top: $propertyValue) {
+  		padding-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-top: $propertyValue) {
+  		padding-top: calc(1rem + 1.5 * (100vw - 20rem) / 96);
+  	} */
+  padding-bottom: clamp( 1rem , 0.6875rem  +  1.5625vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-bottom: $propertyValue) {
+  		padding-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-bottom: $propertyValue) {
+  		padding-bottom: calc(1rem + 1.5 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .lock .popup__content {
@@ -650,12 +722,28 @@ body::after {
 }
 
 .popup__title {
-  font-size: 1.75rem;
+  font-size: clamp( 1.125rem , 0.9947916667rem  +  0.6510416667vw , 1.75rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.125rem + 0.625 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1.5;
 }
 
 .popup__title:not(:last-child) {
-  margin-bottom: 3.5rem;
+  margin-bottom: clamp( 1.25rem , 0.78125rem  +  2.34375vw , 3.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-bottom: $propertyValue) {
+  		margin-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-bottom: $propertyValue) {
+  		margin-bottom: calc(1.25rem + 2.25 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .popup__close-wrapper {
@@ -665,10 +753,7 @@ body::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding: 0 0.9375rem;
+  padding: 0 1.25rem;
 }
 
 .popup__close {
@@ -679,20 +764,39 @@ body::after {
       -ms-flex-align: center;
           align-items: center;
   outline: 0 !important;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: 2.5rem;
+  font-size: clamp( 1.5rem , 1.2916666667rem  +  1.0416666667vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.5rem + 1 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1.5;
   color: var(--text-color);
   opacity: 0.2;
 }
 
 .popup__close::before {
-  font-size: 4rem;
-  margin-right: 2.375rem;
+  font-size: clamp( 2.5rem , 2.1875rem  +  1.5625vw , 4rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(2.5rem + 1.5 * (100vw - 20rem) / 96);
+  	} */
+  margin-right: clamp( 1rem , 0.6875rem  +  1.5625vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-right: $propertyValue) {
+  		margin-right: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-right: $propertyValue) {
+  		margin-right: calc(1rem + 1.5 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .popup__close:focus-visible {
@@ -700,9 +804,36 @@ body::after {
 }
 
 .popup__body {
-  max-width: 26.625rem;
+  max-width: 29.125rem;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 1.25rem;
+}
+
+.thanks__close {
+  -webkit-text-decoration: underline var(--text-color) from-font;
+          text-decoration: underline var(--text-color) from-font;
+  text-underline-offset: 3px;
+  -webkit-transition: 0.3s ease text-decoration 0s;
+  -o-transition: 0.3s ease text-decoration 0s;
+  transition: 0.3s ease text-decoration 0s;
+  outline: 0;
+}
+
+.thanks .popup__body {
+  max-width: 41.4375rem;
+  display: -ms-grid;
+  display: grid;
+  justify-items: flex-start;
+  row-gap: clamp( 1.5rem , 1.3958333333rem  +  0.5208333333vw , 2rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(1.5rem + 0.5 * (100vw - 20rem) / 96);
+  	} */
 }
 
 [data-fullscreen] {
@@ -710,7 +841,8 @@ body::after {
 }
 
 .touch [data-fullscreen] {
-  min-height: calc(var(--vh, 1vh) * 100);
+  min-height: initial;
+  height: calc(var(--vh, 1vh) * 100);
 }
 
 [class*=-ibg] {
@@ -735,19 +867,43 @@ body::after {
 h1,
 .title-h1 {
   font-weight: 500;
-  font-size: 3.75rem;
+  font-size: clamp( 1.875rem , 1.1607142857rem  +  3.5714285714vw , 3.375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.875rem + 1.5 * (100vw - 20rem) / 42);
+  	} */
   line-height: 1.1;
 }
 
 h2,
 .title-h2 {
-  font-size: 2.5rem;
+  font-size: clamp( 1.25rem , 1.0416666667rem  +  1.0416666667vw , 2.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.25rem + 1 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1.5;
 }
 
 h3,
 .title-h3 {
-  font-size: 1.875rem;
+  font-size: clamp( 1.125rem , 1.0078125rem  +  0.5859375vw , 1.6875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.125rem + 0.5625 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1.5;
 }
 
@@ -759,8 +915,36 @@ video {
 }
 
 section {
-  padding-top: 6.25rem;
-  padding-bottom: 6.25rem;
+  padding-top: clamp( 2.5rem , 1.71875rem  +  3.90625vw , 6.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-top: $propertyValue) {
+  		padding-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-top: $propertyValue) {
+  		padding-top: calc(2.5rem + 3.75 * (100vw - 20rem) / 96);
+  	} */
+  padding-bottom: clamp( 2.5rem , 1.71875rem  +  3.90625vw , 6.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-bottom: $propertyValue) {
+  		padding-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-bottom: $propertyValue) {
+  		padding-bottom: calc(2.5rem + 3.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+section:first-child {
+  padding-top: clamp( 1rem , 0.5572916667rem  +  2.2135416667vw , 3.125rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-top: $propertyValue) {
+  		padding-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-top: $propertyValue) {
+  		padding-top: calc(1rem + 2.125 * (100vw - 20rem) / 96);
+  	} */
 }
 
 ._content > * {
@@ -787,14 +971,14 @@ section {
 
 ._content ol li {
   position: relative;
-  padding-left: clamp( 1.5rem , 1.2903014417rem  +  1.0484927916vw , 2.5rem );
+  padding-left: clamp( 1.5rem , 1.2916666667rem  +  1.0416666667vw , 2.5rem );
   /* 	// Если поддерживается clamp();
   	@supports (padding-left: $propertyValue) {
   		padding-left: $propertyValue;
   	}
   	// Если не поддерживается clamp();
   	@supports not (padding-left: $propertyValue) {
-  		padding-left: calc(1.5rem + 1 * (100vw - 20rem) / 95.375);
+  		padding-left: calc(1.5rem + 1 * (100vw - 20rem) / 96);
   	} */
   list-style-type: none;
 }
@@ -840,6 +1024,153 @@ section {
   border-collapse: collapse;
 }
 
+._content .wp-block-quote {
+  font-size: clamp( 1.125rem , 1.0078125rem  +  0.5859375vw , 1.6875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.125rem + 0.5625 * (100vw - 20rem) / 96);
+  	} */
+  line-height: 1.5;
+  margin-top: clamp( 1.25rem , 0.8854166667rem  +  1.8229166667vw , 3rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(1.25rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
+  margin-bottom: clamp( 1.25rem , 0.8854166667rem  +  1.8229166667vw , 3rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-bottom: $propertyValue) {
+  		margin-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-bottom: $propertyValue) {
+  		margin-bottom: calc(1.25rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+._content .wp-block-quote cite {
+  font-size: clamp( 0.875rem , 0.796875rem  +  0.390625vw , 1.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(0.875rem + 0.375 * (100vw - 20rem) / 96);
+  	} */
+  opacity: 0.6;
+}
+
+._content figure {
+  margin-top: clamp( 1.25rem , 0.8854166667rem  +  1.8229166667vw , 3rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(1.25rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
+  margin-bottom: clamp( 1.25rem , 0.8854166667rem  +  1.8229166667vw , 3rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-bottom: $propertyValue) {
+  		margin-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-bottom: $propertyValue) {
+  		margin-bottom: calc(1.25rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+._content figure figcaption {
+  font-size: clamp( 0.75rem , 0.6979166667rem  +  0.2604166667vw , 1rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(0.75rem + 0.25 * (100vw - 20rem) / 96);
+  	} */
+  line-height: 1.5;
+  margin-top: clamp( 0.75rem , 0.6458333333rem  +  0.5208333333vw , 1.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(0.75rem + 0.5 * (100vw - 20rem) / 96);
+  	} */
+}
+
+._content .columns-1 {
+  display: -ms-grid;
+  display: grid;
+  gap: clamp( 0.625rem , 0.2994791667rem  +  1.6276041667vw , 2.1875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (gap: $propertyValue) {
+  		gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (gap: $propertyValue) {
+  		gap: calc(0.625rem + 1.5625 * (100vw - 20rem) / 96);
+  	} */
+}
+
+._content .columns-2 {
+  display: -ms-grid;
+  display: grid;
+  gap: clamp( 0.625rem , 0.2994791667rem  +  1.6276041667vw , 2.1875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (gap: $propertyValue) {
+  		gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (gap: $propertyValue) {
+  		gap: calc(0.625rem + 1.5625 * (100vw - 20rem) / 96);
+  	} */
+}
+
+._content .columns-3 {
+  display: -ms-grid;
+  display: grid;
+  gap: clamp( 0.625rem , 0.2994791667rem  +  1.6276041667vw , 2.1875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (gap: $propertyValue) {
+  		gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (gap: $propertyValue) {
+  		gap: calc(0.625rem + 1.5625 * (100vw - 20rem) / 96);
+  	} */
+}
+
+._content .columns-4 {
+  display: -ms-grid;
+  display: grid;
+  gap: clamp( 0.625rem , 0.2994791667rem  +  1.6276041667vw , 2.1875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (gap: $propertyValue) {
+  		gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (gap: $propertyValue) {
+  		gap: calc(0.625rem + 1.5625 * (100vw - 20rem) / 96);
+  	} */
+}
+
+._content .wp-block-gallery figure {
+  margin: 0;
+}
+
 ._content :first-child {
   margin-top: 0;
 }
@@ -864,6 +1195,65 @@ section {
   pointer-events: none;
 }
 
+.scroll-top {
+  position: fixed;
+  bottom: clamp( 0.0000000625rem , -2.767856942rem  +  4.4642854911vw , 1.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (bottom: $propertyValue) {
+  		bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (bottom: $propertyValue) {
+  		bottom: calc(0.0000000625rem + 1.2499999375 * (100vw - 62rem) / 28);
+  	} */
+  left: 0;
+  z-index: 1;
+}
+
+.scroll-top__container {
+  position: relative;
+}
+
+.scroll-top__button {
+  padding: clamp( 0.625rem , 0.4947916667rem  +  0.6510416667vw , 1.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding: $propertyValue) {
+  		padding: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding: $propertyValue) {
+  		padding: calc(0.625rem + 0.625 * (100vw - 20rem) / 96);
+  	} */
+  font-size: clamp( 1.5rem , 1.34375rem  +  0.78125vw , 2.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.5rem + 0.75 * (100vw - 20rem) / 96);
+  	} */
+  background-color: #fff;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease all 0s;
+  -o-transition: 0.3s ease all 0s;
+  transition: 0.3s ease all 0s;
+}
+
+.scroll-top__button._active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.scroll-top__button._icon-slider-left::before {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
 .swiper__arrow {
   color: var(--text-color);
   opacity: 0.15;
@@ -873,6 +1263,30 @@ section {
   cursor: default;
 }
 
+.logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.logo svg {
+  max-width: clamp( 5rem , 4.2447916667rem  +  3.7760416667vw , 8.625rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (max-width: $propertyValue) {
+  		max-width: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (max-width: $propertyValue) {
+  		max-width: calc(5rem + 3.625 * (100vw - 20rem) / 96);
+  	} */
+}
+
 .logo svg path {
   fill: var(--text-color);
   -webkit-transition: 0.3s ease fill 0s;
@@ -880,9 +1294,67 @@ section {
   transition: 0.3s ease fill 0s;
 }
 
+.social__list {
+  margin: clamp( -0.9375rem , -0.5598958333rem  +  -0.3255208333vw , -0.625rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin: $propertyValue) {
+  		margin: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin: $propertyValue) {
+  		margin: calc(-0.625rem + -0.3125 * (100vw - 20rem) / 96);
+  	} */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social__item {
+  font-size: clamp( 2rem , 1.921875rem  +  0.390625vw , 2.375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(2rem + 0.375 * (100vw - 20rem) / 96);
+  	} */
+  padding: clamp( 0.625rem , 0.5598958333rem  +  0.3255208333vw , 0.9375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding: $propertyValue) {
+  		padding: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding: $propertyValue) {
+  		padding: calc(0.625rem + 0.3125 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.social__item a {
+  opacity: 0.2;
+}
+
 .icon-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   z-index: 200;
+}
+
+.icon-menu svg {
+  max-width: clamp( 1.75rem , 1.5677083333rem  +  0.9114583333vw , 2.625rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (max-width: $propertyValue) {
+  		max-width: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (max-width: $propertyValue) {
+  		max-width: calc(1.75rem + 0.875 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .burger__cube {
@@ -931,12 +1403,28 @@ section {
   min-height: calc(var(--vh, 1vh) * 100);
   overflow-y: auto;
   padding: 10rem 0.9375rem;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  justify-items: center;
+  padding-top: clamp( 5rem , 3.9583333333rem  +  5.2083333333vw , 10rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-top: $propertyValue) {
+  		padding-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-top: $propertyValue) {
+  		padding-top: calc(5rem + 5 * (100vw - 20rem) / 96);
+  	} */
+  padding-bottom: clamp( 5rem , 3.9583333333rem  +  5.2083333333vw , 10rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-bottom: $propertyValue) {
+  		padding-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-bottom: $propertyValue) {
+  		padding-bottom: calc(5rem + 5 * (100vw - 20rem) / 96);
+  	} */
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr auto;
+  grid-template-rows: 1fr auto;
   scrollbar-width: thin;
   -webkit-transition: 0.5s ease all 0s;
   -o-transition: 0.5s ease all 0s;
@@ -958,7 +1446,15 @@ section {
   top: 0;
   right: 0;
   width: 100%;
-  height: 10rem;
+  height: clamp( 5rem , 3.9583333333rem  +  5.2083333333vw , 10rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (height: $propertyValue) {
+  		height: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (height: $propertyValue) {
+  		height: calc(5rem + 5 * (100vw - 20rem) / 96);
+  	} */
   background-color: var(--bg-color);
   -webkit-transition: 0.5s ease all 0s;
   -o-transition: 0.5s ease all 0s;
@@ -981,19 +1477,34 @@ section {
 }
 
 .menu__row {
+  width: 100%;
   max-width: 48.875rem;
   margin-left: auto;
   margin-right: auto;
   display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  justify-items: center;
-  -webkit-column-gap: 12.5rem;
-     -moz-column-gap: 12.5rem;
-          column-gap: 12.5rem;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-column-gap: clamp( 6.25rem , -0.4310344828rem  +  10.775862069vw , 12.5rem );
+     -moz-column-gap: clamp( 6.25rem , -0.4310344828rem  +  10.775862069vw , 12.5rem );
+          column-gap: clamp( 6.25rem , -0.4310344828rem  +  10.775862069vw , 12.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (column-gap: $propertyValue) {
+  		column-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (column-gap: $propertyValue) {
+  		column-gap: calc(6.25rem + 6.25 * (100vw - 62rem) / 58);
+  	} */
+  row-gap: clamp( 1rem , 0.8177083333rem  +  0.9114583333vw , 1.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(1rem + 0.875 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .menu__row ul {
@@ -1001,41 +1512,40 @@ section {
   display: grid;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-  row-gap: 2.5rem;
+  row-gap: inherit;
 }
 
 .menu__row li {
   font-weight: 600;
-  font-size: 3.75rem;
+  font-size: clamp( 1.625rem , 1.0297619048rem  +  2.9761904762vw , 2.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.625rem + 1.25 * (100vw - 20rem) / 42);
+  	} */
   line-height: 1.5;
 }
 
 .menu .social {
+  width: 100%;
   max-width: 113.5rem;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 0.9375rem;
 }
 
 .menu .social:not(:first-child) {
-  margin-top: 6rem;
-}
-
-.menu .social__list {
-  margin: -0.9375rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.menu .social__item {
-  padding: 0.9375rem;
+  margin-top: clamp( 3rem , 2.8958333333rem  +  0.5208333333vw , 3.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(3rem + 0.5 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .header {
@@ -1044,8 +1554,24 @@ section {
   right: 0;
   z-index: 140;
   background-color: var(--bg-color);
-  padding-top: 0.9375rem;
-  padding-bottom: 0.9375rem;
+  padding-top: clamp( 0.625rem , 0.5598958333rem  +  0.3255208333vw , 0.9375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-top: $propertyValue) {
+  		padding-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-top: $propertyValue) {
+  		padding-top: calc(0.625rem + 0.3125 * (100vw - 20rem) / 96);
+  	} */
+  padding-bottom: clamp( 0.625rem , 0.5598958333rem  +  0.3255208333vw , 0.9375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-bottom: $propertyValue) {
+  		padding-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-bottom: $propertyValue) {
+  		padding-bottom: calc(0.625rem + 0.3125 * (100vw - 20rem) / 96);
+  	} */
   -webkit-transition: 0.5s ease background-color 0s;
   -o-transition: 0.5s ease background-color 0s;
   transition: 0.5s ease background-color 0s;
@@ -1058,12 +1584,27 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__left {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.header__center {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 60%;
+          flex: 1 0 60%;
 }
 
 .header__right {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1075,12 +1616,79 @@ section {
           justify-content: flex-end;
 }
 
-.collections {
+.header__menu {
+  opacity: 1;
+}
+
+.collection-controlls {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+}
+
+.tax-collection .collection-controlls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.collection-controlls__item {
+  font-size: 1.1875rem;
+  line-height: 1;
+  color: var(--text-color);
+  opacity: 0.2;
+  padding: 0.3125rem;
+  margin: -0.3125rem;
+  -webkit-transition: 0.3s ease opacity 0s;
+  -o-transition: 0.3s ease opacity 0s;
+  transition: 0.3s ease opacity 0s;
+}
+
+.collection-controlls__item._active {
+  opacity: 1;
+}
+
+.collection-controlls__item:not(:last-child) {
+  margin-right: clamp( 0.625rem , 0.4947916667rem  +  0.6510416667vw , 1.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-right: $propertyValue) {
+  		margin-right: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-right: $propertyValue) {
+  		margin-right: calc(0.625rem + 0.625 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.collections:first-child {
   padding-top: 0;
 }
 
 .collections__wrapper {
-  padding-top: 3.125rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  row-gap: clamp( 2.5rem , 1.9791666667rem  +  2.6041666667vw , 5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(2.5rem + 2.5 * (100vw - 20rem) / 96);
+  	} */
+  padding-top: clamp( 2.25rem , 2.0677083333rem  +  0.9114583333vw , 3.125rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-top: $propertyValue) {
+  		padding-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-top: $propertyValue) {
+  		padding-top: calc(2.25rem + 0.875 * (100vw - 20rem) / 96);
+  	} */
   position: relative;
 }
 
@@ -1132,45 +1740,20 @@ section {
   opacity: 0;
 }
 
-.collections__controlls {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.collections__controlls:not(:last-child) {
-  margin-bottom: 6.25rem;
-}
-
-.collections__controll {
-  font-size: 1.1875rem;
-  line-height: 1;
-  color: var(--text-color);
-  opacity: 0.2;
-  padding: 0.3125rem;
-  margin: -0.3125rem;
-  -webkit-transition: 0.3s ease opacity 0s;
-  -o-transition: 0.3s ease opacity 0s;
-  transition: 0.3s ease opacity 0s;
-}
-
-.collections__controll._active {
-  opacity: 1;
-}
-
-.collections__controll:not(:last-child) {
-  margin-right: 1.25rem;
-}
-
 .collections__items {
   display: -ms-grid;
   display: grid;
   -ms-flex-line-pack: start;
       align-content: flex-start;
-  row-gap: 10rem;
+  row-gap: clamp( 4.5rem , 4.1354166667rem  +  1.8229166667vw , 6.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(4.5rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
   margin-left: auto;
   margin-right: auto;
   -webkit-transition: 0.3s ease opacity 0s;
@@ -1179,6 +1762,7 @@ section {
 }
 
 .collections__items_row {
+  width: 100%;
   max-width: 61.25rem;
 }
 
@@ -1201,7 +1785,15 @@ section {
 }
 
 .collections__items_row .item-collection__badge {
-  font-size: 1.375rem;
+  font-size: clamp( 0.75rem , 0.4523809524rem  +  1.4880952381vw , 1.375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(0.75rem + 0.625 * (100vw - 20rem) / 42);
+  	} */
   line-height: 1.5;
 }
 
@@ -1241,86 +1833,158 @@ section {
   line-height: 1.5;
 }
 
-.collections__items_row .item-collection:nth-child(2n-1) .item-collection__wrapper {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: 35.7142857143% 35.7142857143%;
-  grid-template-columns: 35.7142857143% 35.7142857143%;
-}
-
-.collections__items_row .item-collection:nth-child(2n) .item-collection__wrapper {
-  text-align: center;
-}
-
-.collections__items_row .item-collection:nth-child(2n+1) .item-collection__wrapper {
-  -ms-grid-columns: 35.7142857143% 35.7142857143%;
-  grid-template-columns: 35.7142857143% 35.7142857143%;
-  -webkit-column-gap: 2.25rem;
-     -moz-column-gap: 2.25rem;
-          column-gap: 2.25rem;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-}
-
-.collections__items_row .item-collection:nth-child(2n+1) .item-collection__wrapper .item-collection__body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.collections__items_row .item-collection:nth-child(2n+1) .item-collection__wrapper .item-collection__body > * {
-  -webkit-writing-mode: vertical-rl;
-      -ms-writing-mode: tb-rl;
-          writing-mode: vertical-rl;
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.collections__items_row .item-collection:nth-child(2n+2) .item-collection__wrapper {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-columns: 35.7142857143% 35.7142857143%;
-  grid-template-columns: 35.7142857143% 35.7142857143%;
-}
-
-.collections__items_row .item-collection:nth-child(2n+2) .item-collection__wrapper .item-collection__body {
-  text-align: right;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1/2;
-}
-
 .item-collection__wrapper {
   display: -ms-grid;
   display: grid;
-  -webkit-column-gap: 4.5rem;
-     -moz-column-gap: 4.5rem;
-          column-gap: 4.5rem;
-  row-gap: 3.5rem;
+  -webkit-column-gap: clamp( 1rem , 0.4791666667rem  +  2.6041666667vw , 3.5rem );
+     -moz-column-gap: clamp( 1rem , 0.4791666667rem  +  2.6041666667vw , 3.5rem );
+          column-gap: clamp( 1rem , 0.4791666667rem  +  2.6041666667vw , 3.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (column-gap: $propertyValue) {
+  		column-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (column-gap: $propertyValue) {
+  		column-gap: calc(1rem + 2.5 * (100vw - 20rem) / 96);
+  	} */
+  row-gap: clamp( 0.75rem , 0.3333333333rem  +  2.0833333333vw , 2.75rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(0.75rem + 2 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .collections__items_row .item-collection__image {
-  max-width: 21.875rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 18.75rem;
 }
 
 .item-collection__body {
+  row-gap: 0.25rem;
+  max-height: clamp( 15rem , 10.2941176471rem  +  23.5294117647vw , 18.75rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (max-height: $propertyValue) {
+  		max-height: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (max-height: $propertyValue) {
+  		max-height: calc(15rem + 3.75 * (100vw - 20rem) / 15.9375);
+  	} */
   display: -ms-grid;
   display: grid;
-  row-gap: 0.25rem;
+  -webkit-column-gap: 0.25rem;
+     -moz-column-gap: 0.25rem;
+          column-gap: 0.25rem;
+}
+
+.item-collection__title {
+  font-size: clamp( 1.125rem , 0.1130952381rem  +  5.0595238095vw , 3.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.125rem + 2.125 * (100vw - 20rem) / 42);
+  	} */
+  max-width: 18.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.collections-news {
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
+  width: 100%;
+  max-width: 61.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.collections-news__wrapper {
+  display: block;
+  width: 100%;
+  text-align: center;
 }
 
 .collection {
   padding-top: 1.5rem;
-  padding-bottom: 4rem;
+  padding-bottom: clamp( 1.5rem , 0.9791666667rem  +  2.6041666667vw , 4rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-bottom: $propertyValue) {
+  		padding-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-bottom: $propertyValue) {
+  		padding-bottom: calc(1.5rem + 2.5 * (100vw - 20rem) / 96);
+  	} */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   min-width: 0;
   overflow: hidden;
+  position: relative;
+}
+
+.collection::before,
+.collection::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease opacity 0s;
+  -o-transition: 0.3s ease opacity 0s;
+  transition: 0.3s ease opacity 0s;
+}
+
+.collection::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--text-color);
+}
+
+.collection::after {
+  position: fixed;
+  width: 6.25rem;
+  height: 6.25rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: url(../img/icons/loading.gif) no-repeat center/contain;
+}
+
+.collection._loading {
+  pointer-events: none;
+}
+
+.collection._loading::before {
+  opacity: 0.055;
+}
+
+.collection._loading::after {
+  opacity: 1;
+}
+
+.collection._loading .collection__wrapper {
+  opacity: 0;
+}
+
+.collection[data-fullscreen] {
+  height: 100vh;
 }
 
 .collection__container {
@@ -1332,9 +1996,6 @@ section {
   width: 100%;
   height: 100%;
   min-width: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .collection__step {
@@ -1364,8 +2025,32 @@ section {
   max-width: 59.8017621145%;
 }
 
+.collection__toggler {
+  opacity: 0.4;
+}
+
+.collection__toggler:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+.collection__toggler a {
+  text-underline-offset: 3px;
+  -webkit-transition: 0.3s ease text-decoration 0s;
+  -o-transition: 0.3s ease text-decoration 0s;
+  transition: 0.3s ease text-decoration 0s;
+}
+
+.collection__toggler a:not(._active) {
+  -webkit-text-decoration: underline var(--text-color) from-font;
+          text-decoration: underline var(--text-color) from-font;
+}
+
+.collection__toggler a._active {
+  pointer-events: none;
+}
+
 .collection__items {
-  max-width: 61.25rem;
+  max-width: 60rem;
   margin-left: auto;
 }
 
@@ -1376,9 +2061,6 @@ section {
   height: 100%;
   min-width: 0;
   position: relative;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
 }
 
 .collection__slider .swiper__arrow {
@@ -1388,7 +2070,15 @@ section {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  font-size: 4rem;
+  font-size: clamp( 3.1875rem , 3.0182291667rem  +  0.8463541667vw , 4rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(3.1875rem + 0.8125 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1;
 }
 
@@ -1412,6 +2102,46 @@ section {
   cursor: pointer;
 }
 
+.collection__slider_column {
+  /* .swiper__arrows {
+     display: none;
+  } */
+}
+
+.collection__slider_column .collection__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: clamp( 1.875rem , -5.474137931rem  +  11.8534482759vw , 8.75rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(1.875rem + 6.875 * (100vw - 62rem) / 58);
+  	} */
+  -webkit-column-gap: clamp( 0.9375rem , -0.2389705882rem  +  5.8823529412vw , 1.875rem );
+     -moz-column-gap: clamp( 0.9375rem , -0.2389705882rem  +  5.8823529412vw , 1.875rem );
+          column-gap: clamp( 0.9375rem , -0.2389705882rem  +  5.8823529412vw , 1.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (column-gap: $propertyValue) {
+  		column-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (column-gap: $propertyValue) {
+  		column-gap: calc(0.9375rem + 0.9375 * (100vw - 20rem) / 15.9375);
+  	} */
+}
+
+.collection__wrapper {
+  -webkit-transition: 0.5s ease all 0s;
+  -o-transition: 0.5s ease all 0s;
+  transition: 0.5s ease all 0s;
+}
+
 .collection__year {
   font-size: 1rem;
   line-height: 1.5;
@@ -1427,16 +2157,23 @@ section {
 .collection-items__row {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-  grid-template-columns: repeat(2, 1fr);
   row-gap: inherit;
-  -webkit-column-gap: 2.5rem;
-     -moz-column-gap: 2.5rem;
-          column-gap: 2.5rem;
+  -webkit-column-gap: clamp( 1rem , 0.6875rem  +  1.5625vw , 2.5rem );
+     -moz-column-gap: clamp( 1rem , 0.6875rem  +  1.5625vw , 2.5rem );
+          column-gap: clamp( 1rem , 0.6875rem  +  1.5625vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (column-gap: $propertyValue) {
+  		column-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (column-gap: $propertyValue) {
+  		column-gap: calc(1rem + 1.5 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .collection-items__column ._content {
   max-width: 26.625rem;
+  line-height: 1.5;
 }
 
 .collection-item {
@@ -1486,24 +2223,44 @@ section {
   line-height: 1;
   position: absolute;
   z-index: 2;
-  top: 50%;
-  -webkit-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-          transform: translateY(-100%);
   opacity: 0;
   pointer-events: none;
 }
 
 .collection-item__back::before {
-  font-size: 4rem;
+  font-size: clamp( 1.5rem , 0.9791666667rem  +  2.6041666667vw , 4rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.5rem + 2.5 * (100vw - 20rem) / 96);
+  	} */
 }
 
 .collection-item__back span {
-  font-size: 2.5rem;
-  margin-left: 2.375rem;
+  font-size: clamp( 1.375rem , 1.140625rem  +  1.171875vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.375rem + 1.125 * (100vw - 20rem) / 96);
+  	} */
+  margin-left: clamp( 0.75rem , 0.3854166667rem  +  1.8229166667vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-left: $propertyValue) {
+  		margin-left: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-left: $propertyValue) {
+  		margin-left: calc(0.75rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
 }
 
-.collection-item__body {
+.collection__slider_row .collection-item__body {
   max-width: 23.6784140969%;
   position: absolute;
   z-index: 1;
@@ -1513,14 +2270,55 @@ section {
           transform: translateY(100%);
 }
 
-.collection-item__title {
+.collection__slider_column .collection-item__body {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin-top: clamp( 0.75rem , 0.59375rem  +  0.78125vw , 1.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(0.75rem + 0.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.collection__slider_row .collection-item__title {
   font-weight: 400;
-  font-size: 2.875rem;
+  font-size: clamp( 1.875rem , 1.6666666667rem  +  1.0416666667vw , 2.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.875rem + 1 * (100vw - 20rem) / 96);
+  	} */
+  line-height: 1.5;
+}
+
+.collection__slider_column .collection-item__title {
+  font-size: 1.25rem;
   line-height: 1.5;
 }
 
 .collection-item__date {
-  font-size: 1.375rem;
+  font-size: clamp( 0.875rem , 0.7708333333rem  +  0.5208333333vw , 1.375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(0.875rem + 0.5 * (100vw - 20rem) / 96);
+  	} */
+  line-height: 1.5;
+}
+
+.collection__slider_column .collection-item__date {
+  font-size: 1rem;
   line-height: 1.5;
 }
 
@@ -1532,19 +2330,36 @@ section {
 }
 
 .collection-item__content:not(:first-child) {
-  margin-top: 3.125rem;
+  margin-top: clamp( 0.75rem , 0.2552083333rem  +  2.4739583333vw , 3.125rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(0.75rem + 2.375 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.collection__slider_column .collection-item__content {
+  display: none;
 }
 
 .collection-item__image {
+  -webkit-transition: 0.3s ease transform 0s;
+  -o-transition: 0.3s ease transform 0s;
+  transition: 0.3s ease transform 0s;
+}
+
+.collection__slider_row .collection-item__image {
   width: 100%;
-  max-width: 37.8854625551%;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   height: 85%;
 }
 
-.collection-item__image > div {
+.collection__slider_row .collection-item__image > div {
   position: absolute;
   top: 0;
   left: 0;
@@ -1552,7 +2367,7 @@ section {
   height: 100%;
 }
 
-.collection-item__image img {
+.collection__slider_row .collection-item__image img {
   position: absolute;
   top: 0;
   left: 0;
@@ -1560,11 +2375,12 @@ section {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  -webkit-filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.1)) drop-shadow(7px 7px 20px rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.1)) drop-shadow(7px 7px 20px rgba(0, 0, 0, 0.1));
-  -webkit-transition: 0.3s ease filter 0s;
-  -o-transition: 0.3s ease filter 0s;
-  transition: 0.3s ease filter 0s;
+}
+
+.collection__slider_column .collection-item__image {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 
 .collection-item__bottom {
@@ -1577,10 +2393,23 @@ section {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  position: relative;
 }
 
 .collection-item__bottom:not(:first-child) {
-  margin-top: 3.5rem;
+  margin-top: clamp( 1.5rem , 1.0833333333rem  +  2.0833333333vw , 3.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(1.5rem + 2 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.collection__slider_column .collection-item__bottom {
+  display: none;
 }
 
 .collection-item__text {
@@ -1595,62 +2424,433 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2.5rem;
+  font-size: clamp( 1.125rem , 0.8385416667rem  +  1.4322916667vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.125rem + 1.375 * (100vw - 20rem) / 96);
+  	} */
   line-height: 1.5;
   opacity: 0;
   pointer-events: none;
-  max-width: 21.4757709251%;
 }
 
 .collection-item__request i {
-  font-size: 4rem;
+  font-size: clamp( 1.5rem , 0.9791666667rem  +  2.6041666667vw , 4rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1.5rem + 2.5 * (100vw - 20rem) / 96);
+  	} */
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
-  margin-left: 2.125rem;
+  margin-left: clamp( 0.75rem , 0.4635416667rem  +  1.4322916667vw , 2.125rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-left: $propertyValue) {
+  		margin-left: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-left: $propertyValue) {
+  		margin-left: calc(0.75rem + 1.375 * (100vw - 20rem) / 96);
+  	} */
 }
 
-.swiper {
-  overflow: hidden;
-}
-
-.swiper-wrapper {
-  width: 100%;
+.collection-section .collection__slider_row {
   height: 100%;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
 }
 
-.swiper-vertical .swiper-wrapper {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.collection-section .collection-item {
+  height: 100%;
 }
 
-.swiper-autoheight .swiper-wrapper {
+.collection-section .collection-item__back {
+  opacity: 0.2;
+  pointer-events: all;
+}
+
+.collection-section .collection-item__body {
+  -webkit-transform: translate(0);
+      -ms-transform: translate(0);
+          transform: translate(0);
+}
+
+.collection-section .collection-item__image > div {
+  position: initial;
+}
+
+.collection-section .collection-item__image img {
+  -webkit-transform: scale(1.2, 1.2);
+      -ms-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  position: initial;
+  -webkit-filter: none;
+          filter: none;
+}
+
+.collection-section .collection-item__text {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.collection-section .collection-item__request {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.news__container {
+  max-width: 82.5rem;
+}
+
+.news__heading:not(:last-child) {
+  margin-bottom: clamp( 2rem , 1.4791666667rem  +  2.6041666667vw , 4.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-bottom: $propertyValue) {
+  		margin-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-bottom: $propertyValue) {
+  		margin-bottom: calc(2rem + 2.5 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.news__items {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: clamp( 1rem , -1.7788104089rem  +  7.7323420074vw , 7.5rem );
+     -moz-column-gap: clamp( 1rem , -1.7788104089rem  +  7.7323420074vw , 7.5rem );
+          column-gap: clamp( 1rem , -1.7788104089rem  +  7.7323420074vw , 7.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (column-gap: $propertyValue) {
+  		column-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (column-gap: $propertyValue) {
+  		column-gap: calc(1rem + 6.5 * (100vw - 35.9375rem) / 84.0625);
+  	} */
+  row-gap: clamp( 1.5rem , 0.5104166667rem  +  4.9479166667vw , 6.25rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(1.5rem + 4.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.item-news__wrapper {
+  display: -ms-grid;
+  display: grid;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  row-gap: clamp( 0.75rem , 0.3854166667rem  +  1.8229166667vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(0.75rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
 }
 
-.swiper-initialized .swiper-slide {
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+.item-news__image {
+  position: relative;
+  padding-bottom: 65%;
 }
 
-.swiper-android .swiper-slide,
-.swiper-android .swiper-wrapper {
-  -webkit-transform: translate3d(0px, 0, 0);
-          transform: translate3d(0px, 0, 0);
+.item-news__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-.swiper-button-lock {
-  display: none !important;
+.item-news__image_top img {
+  -o-object-position: top;
+     object-position: top;
+}
+
+.item-news__image_center img {
+  -o-object-position: center;
+     object-position: center;
+}
+
+.item-news__image_bottom img {
+  -o-object-position: bottom;
+     object-position: bottom;
+}
+
+.item-news__body {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: clamp( 0.75rem , 0.3854166667rem  +  1.8229166667vw , 2.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(0.75rem + 1.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.item-news a.item-news__title {
+  -webkit-text-decoration: underline transparent from-font;
+          text-decoration: underline transparent from-font;
+  text-underline-offset: 0.1875rem;
+  -webkit-transition: 0.3s ease text-decoration 0s;
+  -o-transition: 0.3s ease text-decoration 0s;
+  transition: 0.3s ease text-decoration 0s;
+}
+
+.single-news__container {
+  max-width: 43.75rem;
+}
+
+.single-news__top:not(:last-child) {
+  margin-bottom: clamp( 1.75rem , 1.1770833333rem  +  2.8645833333vw , 4.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-bottom: $propertyValue) {
+  		margin-bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-bottom: $propertyValue) {
+  		margin-bottom: calc(1.75rem + 2.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.single-news__meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: clamp( -1.875rem , -0.3645833333rem  +  -1.3020833333vw , -0.625rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-left: $propertyValue) {
+  		margin-left: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-left: $propertyValue) {
+  		margin-left: calc(-0.625rem + -1.25 * (100vw - 20rem) / 96);
+  	} */
+  margin-right: clamp( -1.875rem , -0.3645833333rem  +  -1.3020833333vw , -0.625rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-right: $propertyValue) {
+  		margin-right: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-right: $propertyValue) {
+  		margin-right: calc(-0.625rem + -1.25 * (100vw - 20rem) / 96);
+  	} */
+  margin-top: -0.375rem;
+  margin-bottom: -0.375rem;
+}
+
+.single-news__meta > * {
+  padding-left: clamp( 0.625rem , 0.3645833333rem  +  1.3020833333vw , 1.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-left: $propertyValue) {
+  		padding-left: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-left: $propertyValue) {
+  		padding-left: calc(0.625rem + 1.25 * (100vw - 20rem) / 96);
+  	} */
+  padding-right: clamp( 0.625rem , 0.3645833333rem  +  1.3020833333vw , 1.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-right: $propertyValue) {
+  		padding-right: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-right: $propertyValue) {
+  		padding-right: calc(0.625rem + 1.25 * (100vw - 20rem) / 96);
+  	} */
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}
+
+.single-news__back {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.single-news__back span {
+  -webkit-text-decoration: underline transparent from-font;
+          text-decoration: underline transparent from-font;
+  text-underline-offset: 3px;
+  -webkit-transition: 0.3s ease text-decoration 0s;
+  -o-transition: 0.3s ease text-decoration 0s;
+  transition: 0.3s ease text-decoration 0s;
+}
+
+.single-news__back::before {
+  font-size: 1.125rem;
+  margin-right: clamp( 0.75rem , 0.6979166667rem  +  0.2604166667vw , 1rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-right: $propertyValue) {
+  		margin-right: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-right: $propertyValue) {
+  		margin-right: calc(0.75rem + 0.25 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.single-news__title {
+  font-weight: 600;
+}
+
+.single-news__title:not(:first-child) {
+  margin-top: clamp( 1rem , 0.8958333333rem  +  0.5208333333vw , 1.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(1rem + 0.5 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.single-news__preview:not(:first-child) {
+  margin-top: clamp( 1.75rem , 1.1770833333rem  +  2.8645833333vw , 4.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(1.75rem + 2.75 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.contacts__wrapper {
+  max-width: 38.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: clamp( 1.5rem , 1.0833333333rem  +  2.0833333333vw , 3.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (row-gap: $propertyValue) {
+  		row-gap: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (row-gap: $propertyValue) {
+  		row-gap: calc(1.5rem + 2 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.contacts__items {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: inherit;
+}
+
+.contacts__item {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  row-gap: 0.75rem;
+}
+
+.contacts__contact h1,
+.contacts__contact h2,
+.contacts__contact h3 {
+  font-weight: 600;
+}
+
+.contacts__contact:not(._content) a {
+  -webkit-text-decoration: underline transparent from-font;
+          text-decoration: underline transparent from-font;
+  text-underline-offset: 3px;
+  -webkit-transition: 0.3s ease text-decoration 0s;
+  -o-transition: 0.3s ease text-decoration 0s;
+  transition: 0.3s ease text-decoration 0s;
+}
+
+.contacts__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.contacts__footer:not(:first-child) {
+  margin-top: clamp( 1.5rem , 1.0833333333rem  +  2.0833333333vw , 3.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-top: $propertyValue) {
+  		margin-top: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-top: $propertyValue) {
+  		margin-top: calc(1.5rem + 2 * (100vw - 20rem) / 96);
+  	} */
+}
+
+.contacts__request {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contacts__request i {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  margin-left: clamp( 1rem , 0.5833333333rem  +  2.0833333333vw , 3rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (margin-left: $propertyValue) {
+  		margin-left: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (margin-left: $propertyValue) {
+  		margin-left: calc(1rem + 2 * (100vw - 20rem) / 96);
+  	} */
 }
 
 @font-face {
@@ -2353,6 +3553,219 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   left: 0;
 }
 
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.swiper-vertical .swiper-wrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.swiper-autoheight .swiper-wrapper {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.swiper-initialized .swiper-slide {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.swiper-android .swiper-slide,
+.swiper-android .swiper-wrapper {
+  -webkit-transform: translate3d(0px, 0, 0);
+          transform: translate3d(0px, 0, 0);
+}
+
+.swiper-button-lock {
+  display: none !important;
+}
+
+@media (min-width: 29.99875em) {
+  ._content .columns-4 {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  ._content .columns-3 {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  ._content .columns-2 {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  ._content .wp-block-gallery figure {
+    position: relative;
+    padding-bottom: 100%;
+  }
+
+  ._content .wp-block-gallery figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+
+  .collection__slider_column .collection__wrapper {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news__items {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 35.93625em) {
+  .menu__row {
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu .social__list {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+1) .item-collection__wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-columns: 40.8163265306% 1fr;
+    grid-template-columns: 40.8163265306% 1fr;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+2) .item-collection__wrapper {
+    text-align: center;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+3) .item-collection__wrapper {
+    -ms-grid-columns: 40.8163265306% 1fr;
+    grid-template-columns: 40.8163265306% 1fr;
+    -webkit-column-gap: clamp( 1rem , 0.1071428571rem  +  4.4642857143vw , 2.25rem );
+       -moz-column-gap: clamp( 1rem , 0.1071428571rem  +  4.4642857143vw , 2.25rem );
+            column-gap: clamp( 1rem , 0.1071428571rem  +  4.4642857143vw , 2.25rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (column-gap: $propertyValue) {
+    		column-gap: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (column-gap: $propertyValue) {
+    		column-gap: calc(1rem + 1.25 * (100vw - 20rem) / 28);
+    	} */
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+3) .item-collection__wrapper .item-collection__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-column-gap: clamp( 0.25rem , -0.4642857143rem  +  3.5714285714vw , 1.25rem );
+       -moz-column-gap: clamp( 0.25rem , -0.4642857143rem  +  3.5714285714vw , 1.25rem );
+            column-gap: clamp( 0.25rem , -0.4642857143rem  +  3.5714285714vw , 1.25rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (column-gap: $propertyValue) {
+    		column-gap: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (column-gap: $propertyValue) {
+    		column-gap: calc(0.25rem + 1 * (100vw - 20rem) / 28);
+    	} */
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+3) .item-collection__wrapper .item-collection__body > * {
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+4) .item-collection__wrapper {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-columns: 1fr 40.8163265306%;
+    grid-template-columns: 1fr 40.8163265306%;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+4) .item-collection__wrapper .item-collection__body {
+    text-align: right;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+4) .item-collection__wrapper .item-collection__title {
+    margin-left: auto;
+  }
+
+  .collection__slider_column .collection__wrapper {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+    -webkit-column-gap: clamp( 1.875rem , -12.1551724138rem  +  22.6293103448vw , 15rem );
+       -moz-column-gap: clamp( 1.875rem , -12.1551724138rem  +  22.6293103448vw , 15rem );
+            column-gap: clamp( 1.875rem , -12.1551724138rem  +  22.6293103448vw , 15rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (column-gap: $propertyValue) {
+    		column-gap: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (column-gap: $propertyValue) {
+    		column-gap: calc(1.875rem + 13.125 * (100vw - 62rem) / 58);
+    	} */
+  }
+
+  .collection__slider_column .collection-item__image {
+    max-width: 23.75rem;
+  }
+}
+
+@media (min-width: 35.93625em) and (min-width: 47.99875em) {
+  .collections__items_row .item-collection:nth-child(4n+1) .item-collection__wrapper {
+    -ms-grid-columns: 18.75rem 1fr;
+    grid-template-columns: 18.75rem 1fr;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+3) .item-collection__wrapper {
+    -ms-grid-columns: 18.75rem 1fr;
+    grid-template-columns: 18.75rem 1fr;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+4) .item-collection__wrapper {
+    -ms-grid-columns: 1fr 18.75rem;
+    grid-template-columns: 1fr 18.75rem;
+  }
+}
+
 @media screen and (min-width: 47.99875em) {
   .col-md-3 {
     -webkit-box-flex: 0;
@@ -2415,6 +3828,120 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     max-width: 100%;
+  }
+}
+
+@media (min-width: 47.99875em) {
+  .popup__close-wrapper {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .popup__close {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+
+  ._content .columns-4 {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .scroll-top {
+    width: 100%;
+  }
+
+  .collection__row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .collection__slider._disabled {
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+
+  .collection__slider_column {
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+
+  .collection-items__row {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collection-item__back {
+    top: 50%;
+    -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+
+  .collection-item__image img {
+    -webkit-filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.1)) drop-shadow(7px 7px 20px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(5px 5px 7px rgba(0, 0, 0, 0.1)) drop-shadow(7px 7px 20px rgba(0, 0, 0, 0.1));
+    -webkit-transition: 0.3s ease filter 0s;
+    -o-transition: 0.3s ease filter 0s;
+    transition: 0.3s ease filter 0s;
+  }
+
+  .collection__slider_row .collection-item__image {
+    max-width: 37.8854625551%;
+  }
+
+  .news {
+    padding-right: clamp( 4.25rem , 2.1120689655rem  +  3.4482758621vw , 6.25rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-right: $propertyValue) {
+    		padding-right: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-right: $propertyValue) {
+    		padding-right: calc(4.25rem + 2 * (100vw - 62rem) / 58);
+    	} */
+    padding-left: clamp( 4.25rem , 2.1120689655rem  +  3.4482758621vw , 6.25rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-left: $propertyValue) {
+    		padding-left: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-left: $propertyValue) {
+    		padding-left: calc(4.25rem + 2 * (100vw - 62rem) / 58);
+    	} */
+  }
+
+  .item-news {
+    position: relative;
+    z-index: 2;
+  }
+
+  .single-news {
+    padding-right: clamp( 4.25rem , 2.1120689655rem  +  3.4482758621vw , 6.25rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-right: $propertyValue) {
+    		padding-right: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-right: $propertyValue) {
+    		padding-right: calc(4.25rem + 2 * (100vw - 62rem) / 58);
+    	} */
+    padding-left: clamp( 4.25rem , 2.1120689655rem  +  3.4482758621vw , 6.25rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-left: $propertyValue) {
+    		padding-left: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-left: $propertyValue) {
+    		padding-left: calc(4.25rem + 2 * (100vw - 62rem) / 58);
+    	} */
   }
 }
 
@@ -2529,10 +4056,188 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
 }
 
 @media (max-width: 47.99875em) {
+  .popup__close-wrapper {
+    margin-bottom: 2rem;
+  }
+
   .touch [data-fullscreen] {
     -webkit-transition: height 0.2s;
     -o-transition: height 0.2s;
     transition: height 0.2s;
+  }
+
+  ._md3-hide {
+    display: none !important;
+  }
+
+  .scroll-top__container {
+    padding: 0;
+  }
+
+  .collection__slider_row {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
+  .collection-item__back {
+    left: 1.25rem;
+  }
+
+  .collection__slider_row .collection-item__body {
+    padding: 0 1.25rem;
+    max-width: 57%;
+  }
+
+  .collection-item__content {
+    -webkit-line-clamp: 4;
+  }
+
+  .collection__slider_row .collection-item__image {
+    height: 100%;
+  }
+
+  ._disabled .collection-item__image {
+    -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+
+  .collection__slider_row .collection-item__bottom {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .collection-section .collection-item__image img {
+    -webkit-transform: scale(1.2, 1.2) translateY(-25%);
+        -ms-transform: scale(1.2, 1.2) translateY(-25%);
+            transform: scale(1.2, 1.2) translateY(-25%);
+  }
+
+  .news {
+    padding-bottom: 5rem;
+  }
+
+  .single-news {
+    padding-bottom: 5rem;
+  }
+}
+
+@media (max-width: 35.93625em) {
+  .collections__wrapper {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+  }
+
+  .collections__items_row .item-collection:nth-child(2n-1) {
+    padding-right: 1.25rem;
+  }
+
+  .collections__items_row .item-collection:nth-child(2n-1) .item-collection__wrapper {
+    -ms-grid-columns: minmax(9.375rem, 18.75rem) 1fr;
+    grid-template-columns: minmax(9.375rem, 18.75rem) 1fr;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .collections__items_row .item-collection:nth-child(2n-1) .item-collection__body {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+  }
+
+  .collections__items_row .item-collection:nth-child(2n) {
+    padding-left: 1.25rem;
+  }
+
+  .collections__items_row .item-collection:nth-child(2n) .item-collection__wrapper {
+    -ms-grid-columns: 1fr minmax(9.375rem, 18.75rem);
+    grid-template-columns: 1fr minmax(9.375rem, 18.75rem);
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .collections__items_row .item-collection:nth-child(2n) .item-collection__body {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+
+  .item-collection__wrapper {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+
+  .item-collection__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .safari .item-collection__body {
+    display: -ms-grid;
+    display: grid;
+    min-width: 6.25rem;
+  }
+
+  .item-collection__badge {
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  .safari .item-collection__badge {
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-writing-mode: initial;
+        -ms-writing-mode: initial;
+            writing-mode: initial;
+  }
+
+  .item-collection__title {
+    -webkit-line-clamp: 1;
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+
+  .safari .item-collection__title {
+    -webkit-line-clamp: 4;
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-writing-mode: initial;
+        -ms-writing-mode: initial;
+            writing-mode: initial;
+  }
+}
+
+@media (min-width: 35.93625em) and (max-width: 47.99875em) {
+  .collections__items_row .item-collection:nth-child(4n+2) {
+    -webkit-column-gap: 2.25rem;
+       -moz-column-gap: 2.25rem;
+            column-gap: 2.25rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 40.8163265306%;
+    grid-template-columns: 1fr 40.8163265306%;
+  }
+
+  .collections__items_row .item-collection:nth-child(4n+2)::before {
+    content: "";
+    display: block;
   }
 }
 
@@ -2551,9 +4256,18 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     opacity: 1;
   }
 
+  .thanks__close:hover {
+    -webkit-text-decoration: underline transparent from-font;
+            text-decoration: underline transparent from-font;
+  }
+
   ._content a:hover {
     -webkit-text-decoration: underline transparent from-font;
             text-decoration: underline transparent from-font;
+  }
+
+  .scroll-top__button:hover {
+    background-color: rgba(196, 196, 196, 0.3);
   }
 
   .swiper__arrow:not(.swiper-button-disabled) {
@@ -2576,6 +4290,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     opacity: 0.6;
   }
 
+  .social__item a {
+    -webkit-transition: 0.3s ease opacity 0s;
+    -o-transition: 0.3s ease opacity 0s;
+    transition: 0.3s ease opacity 0s;
+  }
+
+  .social__item a:hover {
+    opacity: 1;
+  }
+
   .icon-menu {
     -webkit-transition: 0.3s ease opacity 0s;
     -o-transition: 0.3s ease opacity 0s;
@@ -2596,7 +4320,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     opacity: 0.6;
   }
 
-  .collections__controll:not(._active):hover {
+  .collection-controlls__item:not(._active):hover {
     opacity: 0.8;
   }
 
@@ -2620,6 +4344,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     opacity: 0.6;
   }
 
+  .collection__toggler a:not(._active):hover {
+    -webkit-text-decoration: underline transparent from-font;
+            text-decoration: underline transparent from-font;
+  }
+
   .collection-item__back {
     -webkit-transition: 0.3s ease opacity 0s;
     -o-transition: 0.3s ease opacity 0s;
@@ -2639,19 +4368,98 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   .collection-item__request:hover {
     opacity: 0.2 !important;
   }
+
+  .item-news a.item-news__image {
+    -webkit-transition: 0.5s ease opacity 0s;
+    -o-transition: 0.5s ease opacity 0s;
+    transition: 0.5s ease opacity 0s;
+  }
+
+  .item-news a.item-news__image:hover {
+    opacity: 0.8;
+  }
+
+  .item-news a.item-news__title:hover {
+    -webkit-text-decoration: underline var(--text-color) from-font;
+            text-decoration: underline var(--text-color) from-font;
+  }
+
+  .single-news__back:hover span {
+    -webkit-text-decoration: underline var(--text-color) from-font;
+            text-decoration: underline var(--text-color) from-font;
+  }
+
+  .contacts__contact:not(._content) a:hover {
+    -webkit-text-decoration: underline var(--text-color) from-font;
+            text-decoration: underline var(--text-color) from-font;
+  }
+
+  .contacts__request {
+    -webkit-transition: 0.3s ease opacity 0s;
+    -o-transition: 0.3s ease opacity 0s;
+    transition: 0.3s ease opacity 0s;
+  }
+
+  .contacts__request:hover {
+    opacity: 0.6;
+  }
 }
 
-@media (max-height: 41.875em) {
+@media (max-height: 43.75rem) {
   .menu__body {
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
+    padding-top: clamp( 4.75rem , 4.6588541667rem  +  0.4557291667vw , 5.1875rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-top: $propertyValue) {
+    		padding-top: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-top: $propertyValue) {
+    		padding-top: calc(4.75rem + 0.4375 * (100vw - 20rem) / 96);
+    	} */
+    padding-bottom: clamp( 4.75rem , 4.6588541667rem  +  0.4557291667vw , 5.1875rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-bottom: $propertyValue) {
+    		padding-bottom: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-bottom: $propertyValue) {
+    		padding-bottom: calc(4.75rem + 0.4375 * (100vw - 20rem) / 96);
+    	} */
+  }
+
+  .menu__body::before {
+    height: clamp( 4.75rem , 4.6588541667rem  +  0.4557291667vw , 5.1875rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (height: $propertyValue) {
+    		height: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (height: $propertyValue) {
+    		height: calc(4.75rem + 0.4375 * (100vw - 20rem) / 96);
+    	} */
   }
 }
 
 @media (min-height: 43.75em) {
   .header {
-    padding-top: 3.1875rem;
-    padding-bottom: 3.1875rem;
+    padding-top: clamp( 0.625rem , 0.0911458333rem  +  2.6692708333vw , 3.1875rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-top: $propertyValue) {
+    		padding-top: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-top: $propertyValue) {
+    		padding-top: calc(0.625rem + 2.5625 * (100vw - 20rem) / 96);
+    	} */
+    padding-bottom: clamp( 0.625rem , 0.0911458333rem  +  2.6692708333vw , 3.1875rem );
+    /* 	// Если поддерживается clamp();
+    	@supports (padding-bottom: $propertyValue) {
+    		padding-bottom: $propertyValue;
+    	}
+    	// Если не поддерживается clamp();
+    	@supports not (padding-bottom: $propertyValue) {
+    		padding-bottom: calc(0.625rem + 2.5625 * (100vw - 20rem) / 96);
+    	} */
   }
 }
 

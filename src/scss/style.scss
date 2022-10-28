@@ -38,7 +38,7 @@ $maxWidth: 1920;
 $maxWidthContainer: 1816;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
-$containerPadding: 30;
+$containerPadding: 40;
 
 // Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
@@ -151,3 +151,5 @@ body {
 // Подключение стилей отдельных страниц
 @import "pages/home";
 @import "pages/project";
+@import "pages/news";
+@import "pages/contacts";

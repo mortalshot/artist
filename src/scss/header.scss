@@ -1,7 +1,10 @@
 //header ====================================================================================================
 .logo {
+	display: flex;
+
 	// .logo__link
 	&__link {
+		display: flex;
 	}
 	a.logo__link {
 		@media (any-hover: hover) {
@@ -14,6 +17,8 @@
 	}
 
 	svg {
+		@include adaptiveValue("max-width", 138, 80);
+
 		path {
 			fill: var(--text-color);
 			transition: $transition ease fill 0s;
@@ -22,14 +27,40 @@
 }
 
 .social {
+	// .social__list
+	&__list {
+		@include adaptiveValue("margin", -15, -10);
+		display: flex;
+		align-items: center;
+	}
+
 	// .social__item
 	&__item {
+		@include adaptiveValue("font-size", 38, 32);
+		@include adaptiveValue("padding", 15, 10);
+
+		a {
+			opacity: 0.2;
+
+			@media (any-hover: hover) {
+				transition: $transition ease opacity 0s;
+
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
 	}
 }
 
 .icon-menu {
+	display: flex;
 	position: relative;
 	z-index: 200;
+
+	svg {
+		@include adaptiveValue("max-width", 42, 28);
+	}
 
 	@media (any-hover: hover) {
 		transition: $transition ease opacity 0s;
@@ -94,19 +125,21 @@
 		min-height: calc(var(--vh, 1vh) * 100);
 		overflow-y: auto;
 		padding: rem(160) rem(15);
-		align-items: flex-start;
-		align-content: center;
-		justify-items: center;
+		@include adaptiveValue("padding-top", 160, 80);
+		@include adaptiveValue("padding-bottom", 160, 80);
+		display: grid;
+		grid-template-rows: 1fr auto;
 		scrollbar-width: thin;
 		transition: 0.5s ease all 0s;
+
+		@media (max-height: rem(700)) {
+			@include adaptiveValue("padding-top", 83, 76);
+			@include adaptiveValue("padding-bottom", 83, 76);
+		}
 
 		&::-webkit-scrollbar {
 			width: 0;
 			height: 0;
-		}
-
-		@media (max-height: em(670)) {
-			align-content: flex-start;
 		}
 
 		&::before {
@@ -119,9 +152,13 @@
 			top: 0;
 			right: 0;
 			width: 100%;
-			height: rem(160);
+			@include adaptiveValue("height", 160, 80);
 			background-color: var(--bg-color);
 			transition: 0.5s ease all 0s;
+
+			@media (max-height: rem(700)) {
+				@include adaptiveValue("height", 83, 76);
+			}
 		}
 
 		.menu-open & {
@@ -140,24 +177,30 @@
 
 	// .menu__row
 	&__row {
+		width: 100%;
 		max-width: rem(782);
 		margin-left: auto;
 		margin-right: auto;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
-		justify-content: center;
-		justify-items: center;
-		column-gap: rem(200);
+		align-content: flex-start;
+		// grid-template-columns:; repeat(auto-fit, minmax(rem(200), 1fr));
+		@include adaptiveValue("column-gap", 200, 100, 1920, 992, 1);
+		@include adaptiveValue("row-gap", 30, 16);
+
+		@media (min-width: $mobileM) {
+			align-content: center;
+			grid-template-columns: repeat(2, 1fr);
+		}
 
 		ul {
 			display: grid;
 			align-content: flex-start;
-			row-gap: rem(40);
+			row-gap: inherit;
 		}
 
 		li {
 			font-weight: 600;
-			font-size: rem(60);
+			@include adaptiveValue("font-size", 46, 26, 992, 320, 1);
 			line-height: math.div(90, 60);
 		}
 
@@ -173,26 +216,25 @@
 	}
 
 	.social {
+		width: 100%;
 		max-width: rem(1816);
 		margin-left: auto;
 		margin-right: auto;
-		padding: 0 rem(math.div($containerPadding, 2));
+		// padding: 0 rem(math.div($containerPadding, 2));
 
 		&:not(:first-child) {
-			margin-top: rem(96);
+			@include adaptiveValue("margin-top", 56, 48);
 		}
 
 		// .social__list
 		&__list {
-			margin: rem(-15);
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
+			@media (min-width: $mobileM) {
+				justify-content: flex-end;
+			}
 		}
 
 		// .social__item
 		&__item {
-			padding: rem(15);
 		}
 	}
 }
@@ -203,13 +245,13 @@
 	right: 0;
 	z-index: 140;
 	background-color: var(--bg-color);
-	padding-top: rem(15);
-	padding-bottom: rem(15);
+	@include adaptiveValue("padding-top", 15, 10);
+	@include adaptiveValue("padding-bottom", 15, 10);
 	transition: 0.5s ease background-color 0s;
 
 	@media (min-height: em(700)) {
-		padding-top: rem(51);
-		padding-bottom: rem(51);
+		@include adaptiveValue("padding-top", 51, 10);
+		@include adaptiveValue("padding-bottom", 51, 10);
 	}
 
 	// .header__container
@@ -220,15 +262,30 @@
 	&__row {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__left,
+	&__right {
+	}
+
+	// .header__left
+	&__left {
+		flex: 0 1 50%;
 	}
 
 	// .header__logo
 	&__logo {
 	}
 
+	// .header__center
+	&__center {
+		flex: 1 0 60%;
+	}
+
 	// .header__right
 	&__right {
-		flex: 1;
+		flex: 0 1 50%;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
@@ -236,6 +293,7 @@
 
 	// .header__menu
 	&__menu {
+		opacity: 1;
 	}
 }
 
